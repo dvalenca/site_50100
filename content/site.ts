@@ -14,7 +14,7 @@ export const siteConfig = {
   materialsUrl: process.env.NEXT_PUBLIC_MATERIALS_URL ?? "",
   campaignEmail: process.env.NEXT_PUBLIC_CAMPAIGN_EMAIL ?? "",
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://danielvalenca.com.br",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://danielvalenca.com.br",
 };
 
 export type SiteConfig = typeof siteConfig;
