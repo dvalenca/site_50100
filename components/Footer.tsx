@@ -16,10 +16,7 @@ export default function Footer() {
             unoptimized
             className="h-24 w-auto"
           />
-          <p className="mt-4 font-display text-xl uppercase leading-tight text-brand-yellow">
-            {siteConfig.candidate} {siteConfig.number}
-          </p>
-          <p className="mt-2 text-sm font-bold uppercase tracking-wide text-white/80">
+          <p className="mt-4 text-sm font-bold uppercase tracking-wide text-white/80">
             {siteConfig.office} • {siteConfig.party}
           </p>
           {siteConfig.campaignEmail ? (
@@ -52,7 +49,6 @@ export default function Footer() {
           </p>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link className="hover:text-brand-yellow hover:underline" href="/propostas">Propostas</Link></li>
-            <li><Link className="hover:text-brand-yellow hover:underline" href="/sobre">Sobre Daniel</Link></li>
             <li><Link className="hover:text-brand-yellow hover:underline" href="/trajetoria">Trajetória</Link></li>
             <li><Link className="hover:text-brand-yellow hover:underline" href="/participe">Faça parte</Link></li>
             <li><Link className="hover:text-brand-yellow hover:underline" href="/doe">Doe agora</Link></li>

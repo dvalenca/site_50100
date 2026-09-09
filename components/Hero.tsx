@@ -27,9 +27,6 @@ export default function Hero() {
               className="mt-2 w-full max-w-sm"
             />
           </h1>
-          <p className="mt-4 font-display text-xl uppercase leading-tight text-brand-yellow sm:text-2xl">
-            E a política também precisa ser.
-          </p>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90">
             Mobilidade, direito à cidade, clima, trabalho e democracia para colocar
             a vida no centro das prioridades de Pernambuco.

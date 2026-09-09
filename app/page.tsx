@@ -127,7 +127,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section aria-labelledby="sobre-teaser-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section
+        aria-labelledby="sobre-teaser-heading"
+        className="mx-auto max-w-6xl px-4 py-14 sm:px-6"
+      >
         <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr]">
           <div className="border-[5px] border-ink bg-brand-mint p-2 shadow-[8px_8px_0_0_#5d0caa]">
             <PhotoPlaceholder
@@ -146,41 +149,21 @@ export default function HomePage() {
               mobilidade, Daniel passou os últimos anos produzindo dados,
               cobrando políticas públicas e trabalhando para mudar as ruas.
             </p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {highlights.map((item) => (
+                <li
+                  key={item.title}
+                  className="border-2 border-ink bg-white px-3 py-1.5 text-sm font-bold text-ink"
+                >
+                  {item.title}
+                </li>
+              ))}
+            </ul>
             <div className="mt-8">
-              <Button href="/sobre" size="lg">
-                Conheça Daniel
+              <Button href="/trajetoria" size="lg">
+                Conheça Daniel e a trajetória
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        aria-labelledby="trajetoria-teaser-heading"
-        className="texture-paper border-t-[6px] border-ink bg-white py-14"
-      >
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <SectionTitle
-            kicker="Trajetória comprovada"
-            title="Não comecei a discutir mobilidade agora."
-            description="Há mais de uma década, Daniel transforma dados, pesquisa e mobilização em ferramentas para mudar as ruas e cobrar o poder público."
-          />
-          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {highlights.map((item) => (
-              <li key={item.title}>
-                <article className="h-full border-[4px] border-ink bg-brand-yellow p-6 shadow-[5px_5px_0_0_#16121f]">
-                  <h3 className="font-heading text-2xl font-extrabold leading-tight text-ink">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/85">{item.what}</p>
-                </article>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-10">
-            <Button href="/trajetoria" size="lg">
-              Veja o que Daniel já fez
-            </Button>
           </div>
         </div>
       </section>

@@ -21,7 +21,6 @@ export type SiteConfig = typeof siteConfig;
 
 export const navLinks = [
   { href: "/", label: "Início" },
-  { href: "/sobre", label: "Daniel" },
   { href: "/propostas", label: "Propostas" },
   { href: "/trajetoria", label: "Trajetória" },
   { href: "/participe", label: "Faça parte" },
