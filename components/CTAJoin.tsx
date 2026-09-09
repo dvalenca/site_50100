@@ -21,12 +21,12 @@ export default function CTAJoin() {
             </Button>
             {siteConfig.groupUrl ? (
               <Button href={siteConfig.groupUrl} variant="secondary" size="lg" external>
-                Entrar no grupo de voluntariado
+                Grupo de voluntariado
               </Button>
             ) : null}
             {siteConfig.whatsappUrl ? (
               <Button href={siteConfig.whatsappUrl} variant="secondary" size="lg" external>
-                Entrar na comunidade de avisos
+                Comunidade de avisos
               </Button>
             ) : null}
           </div>

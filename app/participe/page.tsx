@@ -20,17 +20,17 @@ const blocks = [
   {
     title: "Voluntariado",
     text: "Coloque seu tempo e talento a serviço da campanha: apoio a atividades, produção e organização.",
-    link: { label: "Entrar no grupo de voluntariado", href: siteConfig.groupUrl },
+    link: { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
   },
   {
     title: "Atividades de rua",
     text: "Levar a conversa para a rua — onde a campanha nasceu. Bairro, feira, ponto de ônibus, calçada.",
-    link: { label: "Entrar no grupo de voluntariado", href: siteConfig.groupUrl },
+    link: { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
   },
   {
     title: "Mobilização digital",
     text: "Espalhar as propostas nas redes, com informação de verdade e sem fake news.",
-    link: { label: "Entrar na comunidade de avisos", href: siteConfig.whatsappUrl },
+    link: { label: "Comunidade de avisos", href: siteConfig.whatsappUrl },
   },
   {
     title: "Receber materiais",
@@ -42,14 +42,14 @@ const blocks = [
   {
     title: "Grupos de apoio",
     text: "Montar um grupo de apoio na sua cidade, bairro, universidade ou local de trabalho.",
-    link: { label: "Entrar no grupo de voluntariado", href: siteConfig.groupUrl },
+    link: { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
   },
   {
     title: "Contato com a campanha",
     text: "Dúvidas, ideias e parcerias: fale diretamente com a equipe.",
     link: siteConfig.campaignEmail
       ? { label: "Escrever para a campanha", href: `mailto:${siteConfig.campaignEmail}` }
-      : { label: "Entrar na comunidade de avisos", href: siteConfig.whatsappUrl },
+      : { label: "Comunidade de avisos", href: siteConfig.whatsappUrl },
   },
 ];
 
