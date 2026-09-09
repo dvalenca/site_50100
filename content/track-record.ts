@@ -93,10 +93,4 @@ export const institutionalWork = [
     description:
       "Experiência em estudos de potencial energético, projetos e desenvolvimento de parques eólicos.",
   },
-  {
-    period: "2023",
-    title: "Assessoria parlamentar",
-    description:
-      "Atuação com automação de processos e ferramentas de dados para apoio ao trabalho legislativo.",
-  },
 ];

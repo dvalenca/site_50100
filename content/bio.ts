@@ -4,7 +4,7 @@ export const bioShort =
 export const bioMedium = [
   "Daniel Arraes de Alencar Valença é engenheiro eletrônico e mestre em Energia pela Universidade Federal de Pernambuco (UFPE). É cofundador da Associação Metropolitana de Ciclistas do Recife — Ameciclo, onde atua desde 2013 em coordenação de projetos, desenvolvimento de dados e estratégia institucional.",
   "Ao longo da trajetória, coordenou e desenvolveu pesquisas, plataformas e projetos ligados à mobilidade por bicicleta e ao planejamento urbano, entre eles o IDECiclo, as Pesquisas Perfil do Ciclista, a Plataforma de Dados, o Observatório Cicloviário e o Ciclodados. Também representou a Ameciclo em espaços de participação e planejamento urbano.",
-  "Atuou na União de Ciclistas do Brasil, no Observatório do Recife, em consultoria de mobilidade urbana para o projeto Recife Parque, em assessoria parlamentar e, antes de se dedicar intensamente à mobilidade, trabalhou com projetos de energia eólica.",
+  "Atuou na União de Ciclistas do Brasil, no Observatório do Recife e em consultoria de mobilidade urbana para o projeto Recife Parque. Antes de se dedicar intensamente à mobilidade, trabalhou com projetos de energia eólica.",
   "Sua atuação conecta mobilidade, dados, clima, participação popular, direito à cidade e fiscalização do poder público.",
 ];
 
@@ -34,10 +34,19 @@ export const timeline = [
     place: "Estudos de potencial energético, projetos e desenvolvimento de parques eólicos",
   },
   {
+    period: "2011",
+    title: "Entrada na Massa Crítica",
+    place: "Bicicletada Recife",
+  },
+  { period: "2012", title: "Cofundador do Cicloação" },
+  { period: "2012", title: "Insere o Bike Polo no Recife" },
+  {
     period: "2013–hoje",
     title: "Cofundação e atuação na Ameciclo",
     place: "Coordenação de projetos, dados e estratégia institucional",
   },
+  { period: "2014", title: "Cofundador da Buzina Mas Não Freia" },
+  { period: "2014", title: "Participação no Movimento Ocupe Estelita" },
   {
     period: "2014–2018",
     title: "Observatório do Recife",
@@ -48,11 +57,7 @@ export const timeline = [
     title: "União de Ciclistas do Brasil",
     place: "Coordenação do GT de Pesquisa, conselheiro do Observatório da Bicicleta e atuação regional no Nordeste",
   },
-  {
-    period: "2023",
-    title: "Assessoria parlamentar",
-    place: "Automação de processos e ferramentas de dados para apoio ao trabalho legislativo",
-  },
+  { period: "2016", title: "Conselheiro da Cidade do Recife" },
   {
     period: "2023–2024",
     title: "Consultoria de mobilidade urbana — Recife Parque",

@@ -85,7 +85,9 @@ export default function TrajetoriaPage() {
                 {item.period}
               </p>
               <h3 className="mt-1 font-heading text-xl font-extrabold text-ink">{item.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-ink/70">{item.place}</p>
+              {item.place ? (
+                <p className="mt-1 text-sm leading-relaxed text-ink/70">{item.place}</p>
+              ) : null}
             </li>
           ))}
         </ol>
