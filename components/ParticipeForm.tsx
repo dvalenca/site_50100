@@ -41,18 +41,18 @@ export default function ParticipeForm() {
   if (status === "unavailable") {
     return (
       <div className="border-[4px] border-ink bg-brand-yellow p-6">
-        <p className="font-display text-xl uppercase text-ink">
+        <p className="font-heading text-xl font-extrabold text-ink">
           Formulário em configuração
         </p>
         <p className="mt-2 text-sm leading-relaxed text-ink/80">
           O envio do formulário será ativado assim que o canal oficial da campanha
-          estiver configurado com segurança. Por enquanto, fale com a campanha
-          {siteConfig.whatsappUrl ? (
+          estiver configurado com segurança. Por enquanto, fale com a equipe
+          {siteConfig.contactWhatsappUrl ? (
             <>
               {" "}
               pelo{" "}
               <a
-                href={siteConfig.whatsappUrl}
+                href={siteConfig.contactWhatsappUrl}
                 rel="noopener noreferrer"
                 target="_blank"
                 className="font-bold underline decoration-2 underline-offset-4"
@@ -159,7 +159,6 @@ export default function ParticipeForm() {
             <option value="voluntariado">Voluntariado</option>
             <option value="rua">Atividades de rua</option>
             <option value="digital">Mobilização digital</option>
-            <option value="materiais">Receber materiais</option>
             <option value="grupo">Grupos de apoio</option>
             <option value="outro">Outro</option>
           </select>

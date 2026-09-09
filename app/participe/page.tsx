@@ -51,7 +51,7 @@ const blocks = [
     title: "Contato com a campanha",
     text: "Dúvidas, ideias e parcerias: fale diretamente com a equipe.",
     links: siteConfig.campaignEmail
-      ? [{ label: "Escrever para a campanha", href: `mailto:${siteConfig.campaignEmail}` }]
+      ? [{ label: "Escrever para a equipe", href: `mailto:${siteConfig.campaignEmail}` }]
       : [{ label: "Comunidade de avisos", href: siteConfig.whatsappUrl }],
   },
 ];
