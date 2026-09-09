@@ -42,4 +42,4 @@ yarn-error.log*
 next-env.d.ts
 
 # fotos originais da campanha (convertidas para public/photos/ em WebP)
-photos/
+/photos/
