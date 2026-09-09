@@ -20,41 +20,39 @@ const blocks = [
   {
     title: "Voluntariado",
     text: "Coloque seu tempo e talento a serviço da campanha: apoio a atividades, produção e organização.",
-    link: { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
+    links: [{ label: "Grupo de voluntariado", href: siteConfig.groupUrl }],
   },
   {
     title: "Atividades de rua",
     text: "Levar a conversa para a rua — onde a campanha nasceu. Bairro, feira, ponto de ônibus, calçada.",
-    link: { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
-  },
-  {
-    title: "Agenda da campanha",
-    text: "As próximas atividades ficam na agenda pública: encontre a campanha na sua rua, bairro ou cidade.",
-    link: { label: "Abrir a agenda", href: siteConfig.agendaUrl },
+    links: [
+      { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
+      { label: "Abrir a agenda", href: siteConfig.agendaUrl },
+    ],
   },
   {
     title: "Mobilização digital",
     text: "Espalhar as propostas nas redes, com informação de verdade e sem fake news.",
-    link: { label: "Comunidade de avisos", href: siteConfig.whatsappUrl },
+    links: [{ label: "Comunidade de avisos", href: siteConfig.whatsappUrl }],
   },
   {
     title: "Receber materiais",
     text: "Quer flyers, adesivos e santinhos para o seu bairro ou cidade? A campanha organiza.",
-    link: siteConfig.materialsUrl
-      ? { label: "Pedir materiais", href: siteConfig.materialsUrl }
-      : null,
+    links: siteConfig.materialsUrl
+      ? [{ label: "Pedir materiais", href: siteConfig.materialsUrl }]
+      : [],
   },
   {
     title: "Grupos de apoio",
     text: "Montar um grupo de apoio na sua cidade, bairro, universidade ou local de trabalho.",
-    link: { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
+    links: [{ label: "Grupo de voluntariado", href: siteConfig.groupUrl }],
   },
   {
     title: "Contato com a campanha",
     text: "Dúvidas, ideias e parcerias: fale diretamente com a equipe.",
-    link: siteConfig.campaignEmail
-      ? { label: "Escrever para a campanha", href: `mailto:${siteConfig.campaignEmail}` }
-      : { label: "Comunidade de avisos", href: siteConfig.whatsappUrl },
+    links: siteConfig.campaignEmail
+      ? [{ label: "Escrever para a campanha", href: `mailto:${siteConfig.campaignEmail}` }]
+      : [{ label: "Comunidade de avisos", href: siteConfig.whatsappUrl }],
   },
 ];
 
@@ -77,15 +75,20 @@ export default function ParticipePage() {
                     {block.title}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-ink/75">{block.text}</p>
-                  {block.link && block.link.href ? (
-                    <a
-                      href={block.link.href}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="mt-auto inline-flex items-center pt-4 font-body text-sm font-extrabold uppercase tracking-wide text-brand-purple underline decoration-2 underline-offset-4 hover:text-brand-orange"
-                    >
-                      {block.link.label} →
-                    </a>
+                  {block.links.length ? (
+                    <div className="mt-auto flex flex-col items-start gap-1 pt-4">
+                      {block.links.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          className="font-body text-sm font-extrabold uppercase tracking-wide text-brand-purple underline decoration-2 underline-offset-4 hover:text-brand-orange"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
                   ) : null}
                 </article>
               </li>
