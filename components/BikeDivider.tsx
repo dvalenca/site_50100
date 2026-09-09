@@ -12,13 +12,13 @@ export default function BikeDivider({
   return (
     <div aria-hidden="true" className={`flex justify-center ${className}`}>
       <div className="relative">
-        <LogoBike className={`h-14 w-auto ${color}`} />
+        <LogoBike className={`h-16 w-auto ${color}`} />
         <svg
           width="34"
           height="22"
           viewBox="0 0 34 22"
           fill="none"
-          className="absolute -right-9 -top-3 -rotate-6"
+          className="absolute -right-10 -top-2 -rotate-6"
         >
           <path
             d="M6 2v18"

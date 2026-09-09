@@ -61,7 +61,7 @@ export default function MobileMenu() {
                 href="/"
                 onClick={() => setOpen(false)}
                 aria-label="Daniel Valença 50.100 — página inicial"
-                className="inline-flex shrink-0 items-center border-[3px] border-ink bg-white p-1.5"
+                className="inline-flex shrink-0 items-center"
               >
                 <Image
                   src="/brand/logo-principal.svg"
@@ -69,7 +69,7 @@ export default function MobileMenu() {
                   width={904}
                   height={644}
                   unoptimized
-                  className="h-11 w-auto"
+                  className="h-14 w-auto"
                 />
               </Link>
               <button

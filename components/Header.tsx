@@ -11,7 +11,7 @@ export default function Header() {
         <Link
           href="/"
           aria-label="Daniel Valença 50.100 — página inicial"
-          className="inline-flex items-center border-[3px] border-ink bg-white p-1.5 shadow-[3px_3px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
+          className="inline-flex items-center transition-transform hover:-translate-y-0.5"
         >
           <Image
             src="/brand/logo-principal.svg"
@@ -19,7 +19,7 @@ export default function Header() {
             width={904}
             height={644}
             unoptimized
-            className="h-10 w-auto sm:h-12"
+            className="h-12 w-auto sm:h-14"
           />
         </Link>
 

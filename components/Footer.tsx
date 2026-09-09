@@ -8,16 +8,14 @@ export default function Footer() {
     <footer className="border-t-[6px] border-ink bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <div className="inline-block border-[3px] border-white/20 bg-white p-2">
-            <Image
-              src="/brand/logo-principal.svg"
-              alt="Logo da campanha: A rua é do povo, com bicicleta"
-              width={904}
-              height={644}
-              unoptimized
-              className="h-20 w-auto"
-            />
-          </div>
+          <Image
+            src="/brand/logo-principal-claro.svg"
+            alt="Logo da campanha: A rua é do povo, com bicicleta"
+            width={904}
+            height={644}
+            unoptimized
+            className="h-20 w-auto"
+          />
           <p className="mt-4 font-display text-xl uppercase leading-tight text-brand-yellow">
             {siteConfig.candidate} {siteConfig.number}
           </p>

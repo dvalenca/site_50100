@@ -15,19 +15,34 @@ export default function Hero() {
           <p className="inline-block border-[3px] border-ink bg-brand-yellow px-3 py-1 font-body text-sm font-extrabold uppercase tracking-[0.15em] text-ink">
             {siteConfig.office} • {siteConfig.party}
           </p>
-          <h1
-            id="hero-heading"
-            className="mt-5 font-display text-5xl uppercase leading-[0.95] text-white sm:text-6xl md:text-7xl"
-          >
-            Daniel Valença
+          <h1 id="hero-heading" className="mt-5">
+            <span className="sr-only">Daniel Valença</span>
+            <Image
+              src="/brand/nome-sombra.svg"
+              alt=""
+              aria-hidden="true"
+              width={984}
+              height={427}
+              unoptimized
+              priority
+              className="mt-2 w-full max-w-lg"
+            />
           </h1>
           <BigNumber className="mt-3 text-6xl text-brand-yellow sm:text-7xl md:text-8xl" />
-          <p className="mt-6 font-display text-2xl uppercase leading-tight text-white sm:text-3xl">
-            A rua é do povo.
-            <span className="block text-xl text-brand-yellow sm:text-2xl">
+          <div className="mt-6 max-w-lg">
+            <Image
+              src="/brand/faixa-a-rua-e-do-povo.svg"
+              alt="A rua é do povo"
+              width={896}
+              height={181}
+              unoptimized
+              priority
+              className="w-full"
+            />
+            <p className="mt-3 font-display text-xl uppercase leading-tight text-brand-yellow sm:text-2xl">
               E a política também precisa ser.
-            </span>
-          </p>
+            </p>
+          </div>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90">
             Mobilidade, direito à cidade, clima, trabalho e democracia para colocar
             a vida no centro das prioridades de Pernambuco.
@@ -63,16 +78,6 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <div className="mb-4 inline-block -rotate-2 border-[4px] border-ink bg-white p-2.5 shadow-[6px_6px_0_0_#ffc900]">
-            <Image
-              src="/brand/logo-principal.svg"
-              alt="Logo da campanha: A rua é do povo, com bicicleta"
-              width={904}
-              height={644}
-              unoptimized
-              className="h-24 w-auto sm:h-32"
-            />
-          </div>
           <div className="border-[6px] border-ink bg-ink p-2 shadow-[10px_10px_0_0_#ffc900]">
             <PhotoPlaceholder
               label="Foto de Daniel em contexto de rua e mobilidade"
