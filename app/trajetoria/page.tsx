@@ -118,7 +118,7 @@ export default function TrajetoriaPage() {
               label: "Daniel em reunião ou espaço de participação",
               src: "/photos/daniel-participacao.webp",
               width: 1200,
-              height: 675,
+              height: 952,
             },
             {
               label: "Daniel pedalando em atividade de mobilidade",
@@ -147,8 +147,8 @@ export default function TrajetoriaPage() {
             {
               label: "Daniel em atividade de mobilidade urbana",
               src: "/photos/daniel-atividade-2.webp",
-              width: 1200,
-              height: 798,
+              width: 769,
+              height: 622,
             },
             {
               label: "Daniel em atividade com ciclistas",
