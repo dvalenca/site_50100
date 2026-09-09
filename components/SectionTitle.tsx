@@ -14,7 +14,7 @@ export default function SectionTitle({
   kickerColor = "text-brand-orange",
 }: SectionTitleProps) {
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-2xl">
       {kicker ? (
         <p
           className={`font-body text-sm font-extrabold uppercase tracking-[0.2em] ${kickerColor}`}
@@ -22,11 +22,13 @@ export default function SectionTitle({
           {kicker}
         </p>
       ) : null}
-      <h2 className={`mt-2 font-display text-4xl leading-[1.05] uppercase sm:text-5xl ${textColor}`}>
+      <h2
+        className={`mt-2 font-heading text-3xl font-extrabold leading-[1.1] sm:text-4xl ${textColor}`}
+      >
         {title}
       </h2>
       {description ? (
-        <p className={`mt-4 text-lg leading-relaxed ${textColor} opacity-90`}>{description}</p>
+        <p className={`mt-4 text-lg leading-relaxed ${textColor} opacity-80`}>{description}</p>
       ) : null}
     </div>
   );

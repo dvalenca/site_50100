@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navLinks, siteConfig } from "@/content/site";
+import Button from "./Button";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
@@ -32,12 +33,9 @@ export default function Header() {
               </li>
             ))}
             <li>
-              <Link
-                href="/doe"
-                className="ml-2 block border-[3px] border-ink bg-brand-orange px-5 py-2 font-display text-base uppercase text-white shadow-[4px_4px_0_0_#16121f] transition-transform hover:-translate-y-0.5 hover:shadow-[5px_6px_0_0_#16121f]"
-              >
+              <Button href="/doe" className="ml-2">
                 Doe agora
-              </Link>
+              </Button>
             </li>
           </ul>
         </nav>
@@ -45,7 +43,7 @@ export default function Header() {
         <div className="flex items-center gap-3 md:hidden">
           <Link
             href="/doe"
-            className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white"
+            className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white shadow-[3px_3px_0_0_#16121f]"
           >
             Doe agora
           </Link>

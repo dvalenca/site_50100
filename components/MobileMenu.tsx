@@ -78,7 +78,7 @@ export default function MobileMenu() {
                   ref={i === 0 ? closeButtonRef : undefined}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="border-b-2 border-ink/20 py-4 font-display text-3xl uppercase text-ink hover:bg-white/60"
+                  className="border-b-2 border-ink/20 py-4 font-heading text-2xl font-extrabold text-ink hover:bg-white/60"
                 >
                   {link.label}
                 </Link>
@@ -88,7 +88,7 @@ export default function MobileMenu() {
             <Link
               href="/doe"
               onClick={() => setOpen(false)}
-              className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white"
+              className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
             >
               Doe agora
             </Link>

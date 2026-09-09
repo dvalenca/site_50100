@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
 import StreetBanner from "@/components/StreetBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import PhotoStrip from "@/components/PhotoStrip";
+import Button from "@/components/Button";
 import CTADonate from "@/components/CTADonate";
 import {
   awards,
@@ -45,8 +46,8 @@ export default function SobrePage() {
             </div>
             <ul className="mt-6 space-y-2">
               {facts.map((fact) => (
-                <li key={fact} className="flex items-start gap-3 text-sm font-bold text-brand-mint">
-                  <span aria-hidden="true" className="mt-1 inline-block h-3 w-3 shrink-0 border-2 border-brand-mint bg-brand-orange" />
+                <li key={fact} className="flex items-start gap-3 text-sm font-semibold text-white">
+                  <span aria-hidden="true" className="mt-1 inline-block h-3 w-3 shrink-0 border-2 border-brand-yellow bg-brand-yellow" />
                   {fact}
                 </li>
               ))}
@@ -69,31 +70,39 @@ export default function SobrePage() {
 
       <section aria-labelledby="linha-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <SectionTitle kicker="Linha do tempo" title="A trajetória, ano a ano." />
-        <ol className="mt-10 space-y-0 border-l-4 border-ink pl-0">
-          {timeline.map((item, i) => (
+        <ol className="mt-10 border-l-4 border-ink pl-0">
+          {timeline.map((item) => (
             <li key={`${item.period}-${item.title}`} className="relative pl-8 pb-8">
               <span
                 aria-hidden="true"
-                className={`absolute -left-[9px] top-1 inline-block h-4 w-4 border-[3px] border-ink ${
-                  i % 2 === 0 ? "bg-brand-orange" : "bg-brand-purple"
-                }`}
+                className="absolute -left-[9px] top-1 inline-block h-4 w-4 border-[3px] border-ink bg-brand-purple"
               />
               <p className="font-body text-sm font-extrabold uppercase tracking-widest text-brand-purple">
                 {item.period}
               </p>
-              <h3 className="mt-1 font-display text-xl uppercase text-ink">{item.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-ink/75">{item.place}</p>
+              <h3 className="mt-1 font-heading text-xl font-extrabold text-ink">{item.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-ink/70">{item.place}</p>
             </li>
           ))}
         </ol>
       </section>
 
+      <section aria-labelledby="fotos-heading" className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+        <h2 id="fotos-heading" className="sr-only">
+          Fotos de Daniel
+        </h2>
+        <PhotoStrip
+          photos={[
+            { label: "Daniel pedalando na cidade" },
+            { label: "Daniel no transporte coletivo" },
+            { label: "Daniel em reunião ou espaço de participação" },
+          ]}
+        />
+      </section>
+
       <section aria-labelledby="institucional-heading" className="texture-paper border-y-[6px] border-ink bg-white py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <SectionTitle
-            kicker="Atuação"
-            title="Atuação política e institucional"
-          />
+          <SectionTitle kicker="Atuação" title="Atuação política e institucional" />
           <ul className="mt-10 grid gap-6 md:grid-cols-2">
             {institutionalWork.map((work) => (
               <li key={work.title}>
@@ -101,7 +110,7 @@ export default function SobrePage() {
                   <p className="font-body text-xs font-extrabold uppercase tracking-widest text-brand-purple">
                     {work.period}
                   </p>
-                  <h3 className="mt-1 font-display text-2xl uppercase text-ink">{work.title}</h3>
+                  <h3 className="mt-1 font-heading text-2xl font-extrabold text-ink">{work.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink/85">{work.description}</p>
                 </article>
               </li>
@@ -166,15 +175,14 @@ export default function SobrePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6">
-        <p className="font-display text-3xl uppercase text-ink sm:text-4xl">
+        <p className="font-heading text-3xl font-extrabold text-ink sm:text-4xl">
           O programa é o próximo passo.
         </p>
-        <Link
-          href="/propostas"
-          className="mt-6 inline-flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-10 py-3 font-display text-xl uppercase text-white shadow-[5px_5px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
-        >
-          Ver as 18 propostas
-        </Link>
+        <div className="mt-6">
+          <Button href="/propostas" size="lg">
+            Ver as 18 propostas
+          </Button>
+        </div>
       </section>
 
       <CTADonate />

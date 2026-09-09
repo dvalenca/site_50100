@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import BigNumber from "@/components/BigNumber";
-import StreetBanner from "@/components/StreetBanner";
+import Button from "@/components/Button";
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -47,17 +47,12 @@ export default function DoePage() {
           </p>
           <div className="mt-8">
             {siteConfig.donationUrl ? (
-              <a
-                href={siteConfig.donationUrl}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="inline-flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-12 py-4 font-display text-2xl uppercase text-white shadow-[6px_6px_0_0_#ffc900] transition-transform hover:-translate-y-1"
-              >
+              <Button href={siteConfig.donationUrl} size="lg" external>
                 Doe agora pela plataforma oficial
-              </a>
+              </Button>
             ) : (
               <div className="max-w-xl border-[4px] border-brand-yellow bg-ink p-6 text-white">
-                <p className="font-display text-2xl uppercase text-brand-yellow">
+                <p className="font-heading text-2xl font-extrabold text-brand-yellow">
                   Plataforma de doação em configuração
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-white/80">
@@ -72,22 +67,18 @@ export default function DoePage() {
         </div>
       </section>
 
-      <StreetBanner backgroundColor="bg-brand-yellow" textColor="text-brand-purple" />
-
       <section aria-labelledby="razoes-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <h2 id="razoes-heading" className="sr-only">
           Por que doar
         </h2>
         <ul className="grid gap-6 md:grid-cols-3">
-          {reasons.map((reason, i) => (
+          {reasons.map((reason) => (
             <li key={reason.title}>
-              <article
-                className={`h-full border-[4px] border-ink p-6 shadow-[5px_5px_0_0_#16121f] ${
-                  i === 1 ? "bg-brand-mint text-ink" : "bg-white text-ink"
-                }`}
-              >
-                <h3 className="font-display text-2xl uppercase leading-tight">{reason.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed opacity-90">{reason.text}</p>
+              <article className="h-full border-[4px] border-ink bg-white p-6 shadow-[5px_5px_0_0_#16121f]">
+                <h3 className="font-heading text-2xl font-extrabold leading-tight text-ink">
+                  {reason.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink/75">{reason.text}</p>
               </article>
             </li>
           ))}

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "./Button";
 import { siteConfig } from "@/content/site";
 
 export default function CTADonate() {
@@ -17,27 +17,15 @@ export default function CTADonate() {
         >
           Dinheiro de campanha também mostra prioridade.
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-brand-mint">
+        <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/90">
           Uma campanha com independência política precisa de muitas pessoas
           contribuindo com o que puderem.
         </p>
-        {isExternal ? (
-          <a
-            href={donationHref}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="mt-8 inline-flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-10 py-4 font-display text-2xl uppercase text-white shadow-[6px_6px_0_0_#ffc900] transition-transform hover:-translate-y-1 hover:shadow-[7px_9px_0_0_#ffc900]"
-          >
+        <div className="mt-8">
+          <Button href={donationHref} size="lg" external={isExternal}>
             Doe agora
-          </a>
-        ) : (
-          <Link
-            href={donationHref}
-            className="mt-8 inline-flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-10 py-4 font-display text-2xl uppercase text-white shadow-[6px_6px_0_0_#ffc900] transition-transform hover:-translate-y-1 hover:shadow-[7px_9px_0_0_#ffc900]"
-          >
-            Doe agora
-          </Link>
-        )}
+          </Button>
+        </div>
       </div>
     </section>
   );

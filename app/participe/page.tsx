@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import SectionTitle from "@/components/SectionTitle";
-import StreetBanner from "@/components/StreetBanner";
 import CTADonate from "@/components/CTADonate";
 import ParticipeForm from "@/components/ParticipeForm";
 import { siteConfig } from "@/content/site";
@@ -53,25 +52,22 @@ export default function ParticipePage() {
             kicker="Faça parte"
             title="Uma campanha feita na rua precisa de gente."
             description="Ajude a levar as ideias da campanha para mais bairros, cidades e pessoas."
+            kickerColor="text-brand-purple"
           />
           <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {blocks.map((block, i) => (
+            {blocks.map((block) => (
               <li key={block.title}>
-                <article
-                  className={`h-full border-[4px] border-ink p-6 shadow-[5px_5px_0_0_#16121f] ${
-                    i % 2 === 0 ? "bg-white text-ink" : "bg-brand-purple text-white"
-                  }`}
-                >
-                  <h2 className="font-display text-2xl uppercase leading-tight">{block.title}</h2>
-                  <p className="mt-3 text-sm leading-relaxed opacity-90">{block.text}</p>
+                <article className="h-full border-[4px] border-ink bg-white p-6 shadow-[5px_5px_0_0_#16121f]">
+                  <h2 className="font-heading text-2xl font-extrabold leading-tight text-ink">
+                    {block.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/75">{block.text}</p>
                 </article>
               </li>
             ))}
           </ul>
         </div>
       </section>
-
-      <StreetBanner backgroundColor="bg-brand-yellow" textColor="text-brand-purple" />
 
       <section aria-labelledby="form-heading" className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
         <SectionTitle

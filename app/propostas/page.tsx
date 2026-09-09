@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
-import StreetBanner from "@/components/StreetBanner";
 import ProposalCard from "@/components/ProposalCard";
 import ProposalsBrowser from "@/components/ProposalsBrowser";
 import { MandateToolsExplained } from "@/components/MandateTools";
@@ -30,12 +29,12 @@ export default function PropostasPage() {
             title="Cinco eixos. Dezoito propostas. Uma mudança de prioridade."
             description="Um programa para colocar a vida no centro, inverter as prioridades do dinheiro público e fazer de Pernambuco um estado onde caminhar, pedalar e usar transporte coletivo sejam escolhas seguras, dignas e desejáveis."
           />
-          <ul className="mt-8 flex flex-wrap gap-2">
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
             {axes.map((axis) => (
               <li key={axis.id}>
                 <Link
                   href={`#${axis.slug}`}
-                  className={`inline-block min-h-11 border-2 border-ink px-4 py-2 font-body text-sm font-extrabold uppercase tracking-wide ${axisColors[axis.id].chip}`}
+                  className="font-body text-sm font-bold text-ink underline decoration-[3px] decoration-brand-purple underline-offset-4 hover:text-brand-purple"
                 >
                   Eixo {axis.id}: {axis.title}
                 </Link>
@@ -46,7 +45,7 @@ export default function PropostasPage() {
       </section>
 
       <section aria-labelledby="todas-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 id="todas-heading" className="font-display text-3xl uppercase text-ink">
+        <h2 className="font-heading text-3xl font-extrabold text-ink">
           Todas as propostas
         </h2>
         <p className="mt-2 text-sm text-ink/70">
@@ -58,8 +57,6 @@ export default function PropostasPage() {
         </div>
       </section>
 
-      <StreetBanner backgroundColor="bg-brand-purple" textColor="text-brand-yellow" />
-
       {axes.map((axis) => {
         const colors = axisColors[axis.id];
         const axisProposals = proposals.filter((p) => p.axis === axis.id);
@@ -68,7 +65,7 @@ export default function PropostasPage() {
             key={axis.id}
             id={axis.slug}
             aria-labelledby={`${axis.slug}-heading`}
-            className={`texture-paper scroll-mt-24 border-t-[6px] border-ink ${colors.bg} ${colors.text}`}
+            className={`texture-paper scroll-mt-24 border-t-[6px] border-ink ${colors.band} ${colors.bandText}`}
           >
             <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
               <p

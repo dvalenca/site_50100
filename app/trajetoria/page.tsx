@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
-import StreetBanner from "@/components/StreetBanner";
 import TrackRecordCard from "@/components/TrackRecordCard";
+import PhotoStrip from "@/components/PhotoStrip";
+import Button from "@/components/Button";
 import CTADonate from "@/components/CTADonate";
 import { awards, publications } from "@/content/bio";
 import { trackRecord } from "@/content/track-record";
@@ -34,13 +34,18 @@ export default function TrajetoriaPage() {
         </div>
       </section>
 
-      <StreetBanner backgroundColor="bg-brand-yellow" textColor="text-brand-purple" />
-
       <section aria-labelledby="projetos-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <h2 id="projetos-heading" className="sr-only">
           Projetos e trabalhos
         </h2>
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <PhotoStrip
+          photos={[
+            { label: "Daniel pedalando em atividade de mobilidade" },
+            { label: "Daniel com movimentos e pessoas na rua" },
+            { label: "Daniel apresentando dados e pesquisas" },
+          ]}
+        />
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {trackRecord.map((item) => (
             <li key={item.title}>
               <TrackRecordCard item={item} />
@@ -85,15 +90,14 @@ export default function TrajetoriaPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6">
-        <p className="font-display text-3xl uppercase text-ink sm:text-4xl">
+        <p className="font-heading text-3xl font-extrabold text-ink sm:text-4xl">
           Trajetória é bom. Programa é melhor.
         </p>
-        <Link
-          href="/propostas"
-          className="mt-6 inline-flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-purple px-10 py-3 font-display text-xl uppercase text-white shadow-[5px_5px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
-        >
-          Ver as 18 propostas
-        </Link>
+        <div className="mt-6">
+          <Button href="/propostas" size="lg">
+            Ver as 18 propostas
+          </Button>
+        </div>
       </section>
 
       <CTADonate />

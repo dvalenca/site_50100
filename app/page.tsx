@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Hero from "@/components/Hero";
 import StreetBanner from "@/components/StreetBanner";
 import SectionTitle from "@/components/SectionTitle";
@@ -8,6 +7,8 @@ import PriorityShift from "@/components/PriorityShift";
 import CTAJoin from "@/components/CTAJoin";
 import CTADonate from "@/components/CTADonate";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import PhotoStrip from "@/components/PhotoStrip";
+import Button from "@/components/Button";
 import { axes } from "@/content/axes";
 import { bioShort, facts } from "@/content/bio";
 import { trackRecord } from "@/content/track-record";
@@ -16,23 +17,17 @@ const threeIdeas = [
   {
     title: "A vida acima da velocidade",
     text: "Nenhuma morte no trânsito deve ser tratada como inevitável.",
-    bg: "bg-brand-orange",
-    text_color: "text-white",
-    chip: "bg-brand-yellow text-ink",
+    chip: "bg-brand-orange text-white",
   },
   {
     title: "85 para os 85",
     text: "Orçamento, espaço e prioridade para a maioria que anda, pedala e usa transporte coletivo.",
-    bg: "bg-brand-purple",
-    text_color: "text-white",
-    chip: "bg-brand-mint text-ink",
+    chip: "bg-brand-purple text-white",
   },
   {
     title: "Mudar a energia é mudar a mobilidade",
     text: "Não basta trocar o motor. Precisamos reduzir a dependência do automóvel e fortalecer caminhada, bicicleta, ônibus e trilhos.",
-    bg: "bg-brand-mint",
-    text_color: "text-ink",
-    chip: "bg-brand-purple text-white",
+    chip: "bg-brand-mint text-ink",
   },
 ];
 
@@ -49,16 +44,16 @@ export default function HomePage() {
         <ul className="grid gap-6 md:grid-cols-3">
           {threeIdeas.map((idea, i) => (
             <li key={idea.title} className={i % 2 === 1 ? "md:-rotate-1" : "md:rotate-1"}>
-              <article
-                className={`h-full border-[4px] border-ink p-6 shadow-[6px_6px_0_0_#16121f] ${idea.bg} ${idea.text_color}`}
-              >
-                <p className={`inline-block border-2 border-ink px-2 py-0.5 font-body text-xs font-extrabold uppercase tracking-widest ${idea.chip}`}>
+              <article className="h-full border-[4px] border-ink bg-white p-6 shadow-[6px_6px_0_0_#16121f]">
+                <p
+                  className={`inline-block border-2 border-ink px-2 py-0.5 font-body text-xs font-extrabold uppercase tracking-widest ${idea.chip}`}
+                >
                   Ideia {i + 1}
                 </p>
-                <h3 className="mt-4 font-display text-2xl uppercase leading-tight">
+                <h3 className="mt-4 font-heading text-2xl font-extrabold leading-tight text-ink">
                   {idea.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed opacity-90">{idea.text}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/75">{idea.text}</p>
               </article>
             </li>
           ))}
@@ -80,15 +75,10 @@ export default function HomePage() {
             ))}
             <li>
               <div className="flex h-full flex-col items-start justify-center gap-4 border-[4px] border-dashed border-ink/40 p-6">
-                <p className="font-display text-2xl uppercase leading-tight text-ink">
+                <p className="font-heading text-2xl font-extrabold leading-tight text-ink">
                   18 propostas detalhadas, uma por uma.
                 </p>
-                <Link
-                  href="/propostas"
-                  className="inline-flex min-h-12 items-center justify-center border-[3px] border-ink bg-ink px-6 py-2 font-display text-lg uppercase text-brand-yellow transition-transform hover:-translate-y-0.5"
-                >
-                  Ver propostas
-                </Link>
+                <Button href="/propostas">Ver propostas</Button>
               </div>
             </li>
           </ul>
@@ -109,51 +99,58 @@ export default function HomePage() {
               kicker="Sobre Daniel"
               title="Mobilidade não é uma pauta pequena."
             />
-            <p className="mt-4 text-base leading-relaxed text-ink/85">
+            <p className="mt-4 text-base leading-relaxed text-ink/80">
               É saúde quando evita mortes. É clima quando reduz emissões. É trabalho
               quando devolve tempo e renda. É direito à cidade quando aproxima as
               pessoas de emprego, escola, cultura e cuidado.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink/85">{bioShort}</p>
+            <p className="mt-4 text-base leading-relaxed text-ink/80">{bioShort}</p>
             <ul className="mt-6 space-y-2">
               {facts.map((fact) => (
-                <li key={fact} className="flex items-start gap-3 text-sm font-bold text-ink">
+                <li key={fact} className="flex items-start gap-3 text-sm font-semibold text-ink">
                   <span aria-hidden="true" className="mt-1 inline-block h-3 w-3 shrink-0 border-2 border-ink bg-brand-orange" />
                   {fact}
                 </li>
               ))}
             </ul>
-            <Link
-              href="/sobre"
-              className="mt-8 inline-flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-purple px-8 py-3 font-display text-xl uppercase text-white shadow-[5px_5px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
-            >
-              Conheça minha trajetória
-            </Link>
+            <div className="mt-8">
+              <Button href="/sobre" size="lg">
+                Conheça minha trajetória
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      <StreetBanner backgroundColor="bg-brand-orange" textColor="text-white" />
-
-      <section aria-labelledby="fez-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <SectionTitle
-          kicker="Trajetória comprovada"
-          title="Não comecei a discutir mobilidade agora."
-          description="Há mais de uma década, Daniel transforma dados, pesquisa e mobilização em ferramentas para mudar as ruas e cobrar o poder público."
-        />
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {trackRecord.map((item) => (
-            <li key={item.title}>
-              <TrackRecordCard item={item} />
-            </li>
-          ))}
-        </ul>
-        <Link
-          href="/trajetoria"
-          className="mt-10 inline-flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-yellow px-8 py-3 font-display text-xl uppercase text-ink shadow-[5px_5px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
-        >
-          Ver trajetória completa
-        </Link>
+      <section aria-labelledby="fez-heading" className="texture-paper border-y-[6px] border-ink bg-white py-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionTitle
+            kicker="Trajetória comprovada"
+            title="Não comecei a discutir mobilidade agora."
+            description="Há mais de uma década, Daniel transforma dados, pesquisa e mobilização em ferramentas para mudar as ruas e cobrar o poder público."
+          />
+          <div className="mt-10">
+            <PhotoStrip
+              photos={[
+                { label: "Daniel pedalando na cidade" },
+                { label: "Daniel em atividade de rua com movimentos" },
+                { label: "Daniel trabalhando com mapas e dados" },
+              ]}
+            />
+          </div>
+          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {trackRecord.map((item) => (
+              <li key={item.title}>
+                <TrackRecordCard item={item} />
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10">
+            <Button href="/trajetoria" size="lg">
+              Ver trajetória completa
+            </Button>
+          </div>
+        </div>
       </section>
 
       <PriorityShift />
@@ -170,18 +167,12 @@ export default function HomePage() {
           <span className="block text-brand-mint">O orçamento também.</span>
         </h2>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            href="/participe"
-            className="inline-flex min-h-14 items-center justify-center border-[3px] border-brand-yellow bg-brand-mint px-10 py-3 font-display text-xl uppercase text-ink transition-transform hover:-translate-y-0.5"
-          >
+          <Button href="/participe" size="lg">
             Faça parte
-          </Link>
-          <Link
-            href="/doe"
-            className="inline-flex min-h-14 items-center justify-center border-[3px] border-brand-mint bg-brand-orange px-10 py-3 font-display text-xl uppercase text-white transition-transform hover:-translate-y-0.5"
-          >
+          </Button>
+          <Button href="/doe" variant="secondary" size="lg" onDark>
             Doe agora
-          </Link>
+          </Button>
         </div>
       </section>
 

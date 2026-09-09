@@ -15,15 +15,17 @@ export default function ProposalCard({ proposal }: { proposal: Proposal }) {
         >
           Proposta {String(proposal.number).padStart(2, "0")}
         </span>
-        <span className="font-body text-xs font-bold uppercase text-ink/60">
+        <span className="font-body text-xs font-bold uppercase text-ink/50">
           Eixo {proposal.axis}
         </span>
       </div>
-      <h3 className="mt-4 font-display text-2xl uppercase leading-tight text-ink group-hover:text-brand-purple">
+      <h3 className="mt-4 font-heading text-2xl font-extrabold leading-tight text-ink group-hover:text-brand-purple">
         {proposal.title}
       </h3>
-      <p className="mt-2 text-sm font-bold text-brand-orange">“{proposal.tagline}”</p>
-      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink/80">
+      <p className="mt-2 text-sm font-medium italic leading-snug text-ink/60">
+        “{proposal.tagline}”
+      </p>
+      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink/75">
         {proposal.proposal}
       </p>
       <span className="mt-auto inline-flex items-center pt-4 font-body text-sm font-extrabold uppercase tracking-wide text-brand-purple underline decoration-2 underline-offset-4">

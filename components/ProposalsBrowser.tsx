@@ -1,9 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { axes } from "@/content/axes";
+import { axes, axisColors } from "@/content/axes";
 import type { Proposal } from "@/content/proposals";
 import ProposalCard from "./ProposalCard";
+
+const filterInactive = "border-[3px] border-ink bg-white text-ink hover:bg-brand-yellow/30";
+const filterActiveBase =
+  "border-[3px] border-ink shadow-[4px_4px_0_0_#16121f] font-heading font-extrabold";
 
 export default function ProposalsBrowser({ proposals }: { proposals: Proposal[] }) {
   const [axisFilter, setAxisFilter] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
@@ -38,25 +42,31 @@ export default function ProposalsBrowser({ proposals }: { proposals: Proposal[] 
             type="button"
             aria-pressed={axisFilter === 0}
             onClick={() => setAxisFilter(0)}
-            className={`min-h-11 border-[3px] border-ink px-4 py-2 font-body text-sm font-extrabold uppercase tracking-wide transition-colors ${
-              axisFilter === 0 ? "bg-ink text-brand-yellow" : "bg-white text-ink hover:bg-brand-yellow/40"
+            className={`min-h-11 px-4 py-2 font-body text-sm font-extrabold uppercase tracking-wide transition-transform ${
+              axisFilter === 0
+                ? `${filterActiveBase} bg-ink text-white`
+                : filterInactive
             }`}
           >
             Todos
           </button>
-          {axes.map((axis) => (
-            <button
-              key={axis.id}
-              type="button"
-              aria-pressed={axisFilter === axis.id}
-              onClick={() => setAxisFilter(axis.id)}
-              className={`min-h-11 border-[3px] border-ink px-4 py-2 font-body text-sm font-extrabold uppercase tracking-wide transition-colors ${
-                axisFilter === axis.id ? "bg-ink text-brand-yellow" : "bg-white text-ink hover:bg-brand-yellow/40"
-              }`}
-            >
-              Eixo {axis.id}
-            </button>
-          ))}
+          {axes.map((axis) => {
+            const active = axisFilter === axis.id;
+            const activeColor = axisColors[axis.id].chip;
+            return (
+              <button
+                key={axis.id}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setAxisFilter(axis.id)}
+                className={`min-h-11 px-4 py-2 font-body text-sm font-extrabold uppercase tracking-wide transition-transform ${
+                  active ? `${filterActiveBase} ${activeColor}` : filterInactive
+                }`}
+              >
+                Eixo {axis.id}
+              </button>
+            );
+          })}
         </div>
 
         <div className="relative w-full lg:max-w-xs">
