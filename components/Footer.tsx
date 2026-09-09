@@ -41,6 +41,18 @@ export default function Footer() {
               </a>
             </p>
           ) : null}
+          {siteConfig.whatsappUrl ? (
+            <p className="mt-2 text-sm">
+              <a
+                className="underline decoration-brand-yellow decoration-2 underline-offset-4 hover:text-brand-yellow"
+                href={siteConfig.whatsappUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Comunidade de avisos no WhatsApp
+              </a>
+            </p>
+          ) : null}
         </div>
 
         <nav aria-label="Links do site">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { navLinks } from "@/content/site";
+import { navLinks, siteConfig } from "@/content/site";
 import Button from "./Button";
 import MobileMenu from "./MobileMenu";
 
@@ -36,7 +36,11 @@ export default function Header() {
               </li>
             ))}
             <li>
-              <Button href="/doe" className="ml-2">
+              <Button
+                href={siteConfig.donationUrl || "/doe"}
+                external={Boolean(siteConfig.donationUrl)}
+                className="ml-2"
+              >
                 Doe agora
               </Button>
             </li>
@@ -44,12 +48,23 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
-          <Link
-            href="/doe"
-            className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white shadow-[3px_3px_0_0_#16121f]"
-          >
-            Doe agora
-          </Link>
+          {siteConfig.donationUrl ? (
+            <a
+              href={siteConfig.donationUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white shadow-[3px_3px_0_0_#16121f]"
+            >
+              Doe agora
+            </a>
+          ) : (
+            <Link
+              href="/doe"
+              className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white shadow-[3px_3px_0_0_#16121f]"
+            >
+              Doe agora
+            </Link>
+          )}
           <MobileMenu />
         </div>
       </div>

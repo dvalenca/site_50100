@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { navLinks } from "@/content/site";
+import { navLinks, siteConfig } from "@/content/site";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -98,13 +98,24 @@ export default function MobileMenu() {
               ))}
             </nav>
 
-            <Link
-              href="/doe"
-              onClick={() => setOpen(false)}
-              className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
-            >
-              Doe agora
-            </Link>
+            {siteConfig.donationUrl ? (
+              <a
+                href={siteConfig.donationUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
+              >
+                Doe agora
+              </a>
+            ) : (
+              <Link
+                href="/doe"
+                onClick={() => setOpen(false)}
+                className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
+              >
+                Doe agora
+              </Link>
+            )}
           </div>
         </div>
       ) : null}

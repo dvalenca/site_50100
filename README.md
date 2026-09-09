@@ -70,7 +70,7 @@ O logo oficial (`public/brand/`) deve ser usado como imagem quando for fornecido
 
 ## Como configurar links
 
-Copie `.env.example` para `.env.local` (desenvolvimento) e configure as variáveis na Vercel (produção):
+Os links oficiais da campanha (doação via Quero Apoiar, Instagram, comunidade de avisos e grupo de voluntariado no WhatsApp) já vêm como padrão em `content/site.ts`. Para sobrescrever, defina as variáveis correspondentes em `.env.local` (desenvolvimento) ou na Vercel (produção):
 
 ### Doação (valores, meta e prova social)
 

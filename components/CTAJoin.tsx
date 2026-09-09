@@ -19,19 +19,14 @@ export default function CTAJoin() {
             <Button href="/participe" size="lg">
               Quero participar
             </Button>
-            {siteConfig.materialsUrl ? (
-              <Button href={siteConfig.materialsUrl} variant="secondary" size="lg" external>
-                Receber materiais
-              </Button>
-            ) : null}
             {siteConfig.groupUrl ? (
               <Button href={siteConfig.groupUrl} variant="secondary" size="lg" external>
-                Entrar no grupo
+                Entrar no grupo de voluntariado
               </Button>
             ) : null}
             {siteConfig.whatsappUrl ? (
               <Button href={siteConfig.whatsappUrl} variant="secondary" size="lg" external>
-                Compartilhar
+                Entrar na comunidade de avisos
               </Button>
             ) : null}
           </div>
