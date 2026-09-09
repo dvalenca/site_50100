@@ -37,7 +37,7 @@ const blocks = [
   },
   {
     title: "Receber materiais",
-    text: "Quer flyers, adesivos e santinhos para o seu bairro ou cidade? A campanha organiza.",
+    text: "Quer flyers, adesivos e santinhos para o seu bairro ou cidade? A equipe organiza.",
     links: siteConfig.materialsUrl
       ? [{ label: "Pedir materiais", href: siteConfig.materialsUrl }]
       : [],
