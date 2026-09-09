@@ -4,7 +4,6 @@ import { siteConfig } from "@/content/site";
 import { axes, axisColors } from "@/content/axes";
 import { proposals } from "@/content/proposals";
 import Button from "./Button";
-import PhotoPlaceholder from "./PhotoPlaceholder";
 
 export default function Hero() {
   return (
@@ -63,9 +62,14 @@ export default function Hero() {
 
         <div className="relative">
           <div className="border-[6px] border-ink bg-ink p-2 shadow-[10px_10px_0_0_#ffc900]">
-            <PhotoPlaceholder
-              label="Foto de Daniel em contexto de rua e mobilidade"
-              className="min-h-72 md:min-h-96"
+            <Image
+              src="/photos/daniel-hero.webp"
+              alt="Daniel em atividade na rua com a bandeira da campanha"
+              width={1600}
+              height={1066}
+              priority
+              className="h-72 w-full object-cover md:h-96"
+              sizes="(min-width: 768px) 40vw, 90vw"
             />
           </div>
           <p

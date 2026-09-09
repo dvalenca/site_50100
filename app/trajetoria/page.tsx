@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import SectionTitle from "@/components/SectionTitle";
 import TrackRecordCard from "@/components/TrackRecordCard";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import Image from "next/image";
 import PhotoStrip from "@/components/PhotoStrip";
 import Button from "@/components/Button";
 import CTADonate from "@/components/CTADonate";
@@ -60,11 +60,13 @@ export default function TrajetoriaPage() {
           </div>
           <div className="md:sticky md:top-24">
             <div className="border-[5px] border-ink bg-brand-yellow p-2 shadow-[8px_8px_0_0_#ee3c00]">
-              <PhotoPlaceholder
-                label="Foto de Daniel Valença"
-                backgroundColor="bg-white"
-                textColor="text-ink"
-                className="min-h-72"
+              <Image
+                src="/photos/daniel-retrato.webp"
+                alt="Retrato de Daniel Valença"
+                width={1200}
+                height={1600}
+                className="aspect-[3/4] w-full object-cover"
+                sizes="(min-width: 768px) 30vw, 90vw"
               />
             </div>
           </div>
@@ -106,7 +108,12 @@ export default function TrajetoriaPage() {
               width: 460,
               height: 620,
             },
-            { label: "Daniel no transporte coletivo" },
+            {
+              label: "Daniel no transporte coletivo",
+              src: "/photos/daniel-onibus.webp",
+              width: 1200,
+              height: 900,
+            },
             {
               label: "Daniel em reunião ou espaço de participação",
               src: "/photos/daniel-participacao.webp",
@@ -119,7 +126,12 @@ export default function TrajetoriaPage() {
               width: 1200,
               height: 1603,
             },
-            { label: "Daniel com movimentos e pessoas na rua" },
+            {
+              label: "Daniel com movimentos e pessoas na rua",
+              src: "/photos/daniel-movimentos.webp",
+              width: 960,
+              height: 640,
+            },
             {
               label: "Daniel apresentando dados e pesquisas",
               src: "/photos/daniel-pesquisas.webp",

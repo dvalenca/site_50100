@@ -4,9 +4,9 @@ import SectionTitle from "@/components/SectionTitle";
 import AxisCard from "@/components/AxisCard";
 import BikeDivider from "@/components/BikeDivider";
 import Button from "@/components/Button";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import CTAJoin from "@/components/CTAJoin";
 import CTADonate from "@/components/CTADonate";
+import Image from "next/image";
 import { axes } from "@/content/axes";
 import { trackRecord } from "@/content/track-record";
 
@@ -133,10 +133,13 @@ export default function HomePage() {
       >
         <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr]">
           <div className="border-[5px] border-ink bg-brand-mint p-2 shadow-[8px_8px_0_0_#5d0caa]">
-            <PhotoPlaceholder
-              label="Retrato de Daniel Valença"
-              backgroundColor="bg-white"
-              textColor="text-ink"
+            <Image
+              src="/photos/daniel-retrato.webp"
+              alt="Retrato de Daniel Valença"
+              width={1200}
+              height={1600}
+              className="aspect-[3/4] w-full object-cover"
+              sizes="(min-width: 768px) 30vw, 90vw"
             />
           </div>
           <div>
