@@ -2,12 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { navLinks, siteConfig } from "@/content/site";
 
-export default function MobileMenu() {
-  const [open, setOpen] = useState(false);
+export default function MobileMenu({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLAnchorElement>(null);
 
@@ -16,7 +21,7 @@ export default function MobileMenu() {
       closeButtonRef.current?.focus();
       document.body.style.overflow = "hidden";
       const onKeydown = (e: KeyboardEvent) => {
-        if (e.key === "Escape") setOpen(false);
+        if (e.key === "Escape") onOpenChange(false);
       };
       document.addEventListener("keydown", onKeydown);
       return () => {
@@ -24,9 +29,9 @@ export default function MobileMenu() {
         document.body.style.overflow = "";
       };
     }
-  }, [open]);
+  }, [open, onOpenChange]);
 
-  const onBackdropClick = () => setOpen(false);
+  const onBackdropClick = () => onOpenChange(false);
 
   return (
     <div className="md:hidden">
@@ -36,7 +41,7 @@ export default function MobileMenu() {
         aria-expanded={open}
         aria-haspopup="dialog"
         aria-label={open ? "Fechar menu" : "Abrir menu"}
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => onOpenChange(!open)}
         className="flex h-11 w-11 items-center justify-center border-[3px] border-ink bg-brand-yellow text-ink"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -62,7 +67,7 @@ export default function MobileMenu() {
                   <div className="flex items-center justify-between gap-4">
                     <Link
                       href="/"
-                      onClick={() => setOpen(false)}
+                      onClick={() => onOpenChange(false)}
                       aria-label="Daniel Valença 50.100 — página inicial"
                       className="inline-flex shrink-0 items-center"
                     >
@@ -77,7 +82,7 @@ export default function MobileMenu() {
                     </Link>
                     <button
                       type="button"
-                      onClick={() => setOpen(false)}
+                      onClick={() => onOpenChange(false)}
                       aria-label="Fechar menu"
                       className="flex h-11 w-11 items-center justify-center border-[3px] border-ink bg-white text-ink"
                     >
@@ -93,7 +98,7 @@ export default function MobileMenu() {
                         key={link.href}
                         ref={i === 0 ? closeButtonRef : undefined}
                         href={link.href}
-                        onClick={() => setOpen(false)}
+                        onClick={() => onOpenChange(false)}
                         className="border-b-2 border-ink/20 py-4 font-heading text-2xl font-extrabold text-ink hover:bg-white/60"
                       >
                         {link.label}
@@ -113,7 +118,7 @@ export default function MobileMenu() {
                   ) : (
                     <Link
                       href="/doe"
-                      onClick={() => setOpen(false)}
+                      onClick={() => onOpenChange(false)}
                       className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
                     >
                       Doe agora

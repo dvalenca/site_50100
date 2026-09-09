@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { navLinks, siteConfig } from "@/content/site";
@@ -5,8 +8,14 @@ import Button from "./Button";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-40 border-b-[5px] border-ink bg-brand-yellow/95 backdrop-blur">
+    <header
+      className={`sticky top-0 z-40 border-b-[5px] border-ink bg-brand-yellow/95 backdrop-blur ${
+        menuOpen ? "hidden" : ""
+      }`}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
@@ -65,7 +74,7 @@ export default function Header() {
               Doe agora
             </Link>
           )}
-          <MobileMenu />
+          <MobileMenu open={menuOpen} onOpenChange={setMenuOpen} />
         </div>
       </div>
     </header>
