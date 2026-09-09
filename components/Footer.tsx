@@ -1,19 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/content/site";
+import LogoBike from "./LogoBike";
 
 export default function Footer() {
   return (
     <footer className="border-t-[6px] border-ink bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl uppercase leading-tight text-brand-yellow">
+          <div className="inline-block border-[3px] border-white/20 bg-white p-2">
+            <Image
+              src="/brand/logo-principal.svg"
+              alt="Logo da campanha: A rua é do povo, com bicicleta"
+              width={904}
+              height={644}
+              unoptimized
+              className="h-20 w-auto"
+            />
+          </div>
+          <p className="mt-4 font-display text-xl uppercase leading-tight text-brand-yellow">
             {siteConfig.candidate} {siteConfig.number}
           </p>
           <p className="mt-2 text-sm font-bold uppercase tracking-wide text-white/80">
             {siteConfig.office} • {siteConfig.party}
-          </p>
-          <p className="mt-4 font-display text-xl uppercase text-brand-mint">
-            {siteConfig.slogan}
           </p>
           {siteConfig.campaignEmail ? (
             <p className="mt-4 text-sm">
@@ -72,24 +81,7 @@ export default function Footer() {
           href="#conteudo"
           className="inline-flex items-center gap-2 text-sm font-bold text-white/80 underline decoration-brand-yellow decoration-2 underline-offset-4 hover:text-brand-yellow"
         >
-          <svg
-            width="26"
-            height="16"
-            viewBox="0 0 26 16"
-            fill="none"
-            aria-hidden="true"
-            className="text-brand-yellow"
-          >
-            <circle cx="5" cy="11" r="3.5" stroke="currentColor" strokeWidth="2" />
-            <circle cx="21" cy="11" r="3.5" stroke="currentColor" strokeWidth="2" />
-            <path
-              d="M5 11l3-6h6l7 6M8 5H6M14 5l-3 6H5"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <LogoBike className="h-4 w-auto text-brand-yellow" />
           Voltar ao topo
         </a>
       </div>

@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
-import { Anton, Bricolage_Grotesque, Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/content/site";
-
-const anton = Anton({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-anton",
-  display: "swap",
-});
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -52,7 +45,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${anton.variable} ${bricolage.variable} ${inter.variable}`}>
+    <html lang="pt-BR" className={`${bricolage.variable} ${inter.variable}`}>
       <body>
         <a
           href="#conteudo"

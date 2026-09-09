@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { navLinks, siteConfig } from "@/content/site";
+import { navLinks } from "@/content/site";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -55,10 +56,22 @@ export default function MobileMenu() {
         >
           <div className="absolute inset-0 bg-ink/60" onClick={onBackdropClick} aria-hidden="true" />
           <div className="texture-paper relative ml-auto flex h-full w-full max-w-sm flex-col overflow-y-auto border-l-[6px] border-ink bg-brand-yellow p-6">
-            <div className="flex items-center justify-between">
-              <p className="font-display text-xl uppercase text-ink">
-                {siteConfig.candidate} {siteConfig.number}
-              </p>
+            <div className="flex items-center justify-between gap-4">
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                aria-label="Daniel Valença 50.100 — página inicial"
+                className="inline-flex shrink-0 items-center border-[3px] border-ink bg-white p-1.5"
+              >
+                <Image
+                  src="/brand/logo-principal.svg"
+                  alt=""
+                  width={904}
+                  height={644}
+                  unoptimized
+                  className="h-11 w-auto"
+                />
+              </Link>
               <button
                 type="button"
                 onClick={() => setOpen(false)}

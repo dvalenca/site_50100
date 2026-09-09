@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { navLinks, siteConfig } from "@/content/site";
+import Image from "next/image";
+import { navLinks } from "@/content/site";
 import Button from "./Button";
 import MobileMenu from "./MobileMenu";
 
@@ -9,15 +10,17 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="flex flex-col leading-none"
-          aria-label={`${siteConfig.candidate} ${siteConfig.number} — página inicial`}
+          aria-label="Daniel Valença 50.100 — página inicial"
+          className="inline-flex items-center border-[3px] border-ink bg-white p-1.5 shadow-[3px_3px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
         >
-          <span className="font-display text-lg uppercase text-ink sm:text-xl">
-            Daniel Valença
-          </span>
-          <span className="font-display text-sm uppercase text-brand-purple sm:text-base">
-            50.100 • PSOL-PE
-          </span>
+          <Image
+            src="/brand/logo-principal.svg"
+            alt=""
+            width={904}
+            height={644}
+            unoptimized
+            className="h-10 w-auto sm:h-12"
+          />
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden md:block">
