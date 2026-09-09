@@ -1,6 +1,10 @@
 // Configuração da área de doação.
 // PREENCHER com dados REAIS da campanha. Nada aqui deve ser inventado:
 // os blocos só aparecem no site quando os campos estiverem preenchidos.
+//
+// URL por valor: os botões de valor usam o padrão da plataforma Quero Apoiar,
+// montado em donationAmountUrl() (content/site.ts):
+//   https://queroapoiar.com.br/danielvalenca/doar/<valor>/info
 export const donateConfig = {
   headline: "Para essa ideia chegar mais longe, ela precisa de você.",
   subline:

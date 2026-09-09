@@ -29,6 +29,13 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
+// A plataforma Quero Apoiar usa o padrão:
+// https://queroapoiar.com.br/danielvalenca/doar/<valor>/info
+export function donationAmountUrl(amount: number): string {
+  const base = siteConfig.donationUrl.replace(/\/+$/, "");
+  return `${base}/doar/${amount}/info`;
+}
+
 export const navLinks = [
   { href: "/", label: "Início" },
   { href: "/propostas", label: "Propostas" },

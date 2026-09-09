@@ -1,6 +1,6 @@
 import Button from "./Button";
 import DonateProgress from "./DonateProgress";
-import { siteConfig } from "@/content/site";
+import { siteConfig, donationAmountUrl } from "@/content/site";
 import { donateConfig } from "@/content/donate";
 
 export default function CTADonate() {
@@ -31,7 +31,7 @@ export default function CTADonate() {
               {donateConfig.suggestedAmounts.map(({ amount, impact }) => (
                 <li key={amount} className="flex flex-col items-center gap-1">
                   <a
-                    href={siteConfig.donationUrl}
+                    href={donationAmountUrl(amount)}
                     rel="noopener noreferrer"
                     target="_blank"
                     className="inline-flex min-h-12 items-center justify-center border-[3px] border-ink bg-white px-6 py-2 font-heading text-lg font-extrabold text-ink shadow-[4px_4px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
