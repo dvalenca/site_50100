@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# fotos originais da campanha (convertidas para public/photos/ em WebP)
+photos/

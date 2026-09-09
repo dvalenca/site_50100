@@ -100,9 +100,32 @@ export default function TrajetoriaPage() {
         </h2>
         <PhotoStrip
           photos={[
-            { label: "Daniel pedalando na cidade" },
+            {
+              label: "Daniel pedalando na cidade",
+              src: "/photos/daniel-pedalando-cidade.webp",
+              width: 460,
+              height: 620,
+            },
             { label: "Daniel no transporte coletivo" },
-            { label: "Daniel em reunião ou espaço de participação" },
+            {
+              label: "Daniel em reunião ou espaço de participação",
+              src: "/photos/daniel-participacao.webp",
+              width: 1200,
+              height: 675,
+            },
+            {
+              label: "Daniel pedalando em atividade de mobilidade",
+              src: "/photos/daniel-pedalando-mobilizacao.webp",
+              width: 1200,
+              height: 1603,
+            },
+            { label: "Daniel com movimentos e pessoas na rua" },
+            {
+              label: "Daniel apresentando dados e pesquisas",
+              src: "/photos/daniel-pesquisas.webp",
+              width: 1200,
+              height: 900,
+            },
           ]}
         />
       </section>
