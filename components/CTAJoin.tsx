@@ -29,6 +29,11 @@ export default function CTAJoin() {
                 Comunidade de avisos
               </Button>
             ) : null}
+            {siteConfig.materialsUrl ? (
+              <Button href={siteConfig.materialsUrl} variant="secondary" size="lg" external>
+                Receber materiais
+              </Button>
+            ) : null}
           </div>
         </div>
       </div>

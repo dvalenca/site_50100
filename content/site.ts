@@ -24,7 +24,9 @@ export const siteConfig = {
   agendaUrl: // agenda de campanha (Google Calendar)
     process.env.NEXT_PUBLIC_AGENDA_URL ||
     "https://calendar.google.com/calendar/u/0?cid=YTcwNWJmYWM5NjAxNjRmMTE2MjkyNzJkNzVjZDllZDUwNTlhZjcyNjUzYTVjN2Y0YzY5MTNmNzVmYmQxMThhZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
-  materialsUrl: process.env.NEXT_PUBLIC_MATERIALS_URL || "",
+  materialsUrl: // receber material (WhatsApp com mensagem pré-definida)
+    process.env.NEXT_PUBLIC_MATERIALS_URL ||
+    "https://wa.me/5581996356706?text=Oi!%20Quero%20receber%20material%20da%20campanha%20de%20Daniel%20Valen%C3%A7a.%20Vou%20enviar%20meu%20nome%20e%20endere%C3%A7o%20na%20pr%C3%B3xima%20mensagem.",
   campaignEmail: process.env.NEXT_PUBLIC_CAMPAIGN_EMAIL || "contato@danielvalenca.com.br",
   cnpj: "68.571.393/0001-27",
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT || "",
