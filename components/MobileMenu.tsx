@@ -64,10 +64,10 @@ export default function MobileMenu() {
                 className="inline-flex shrink-0 items-center"
               >
                 <Image
-                  src="/brand/logo-principal.svg"
+                  src="/brand/bike.svg"
                   alt=""
-                  width={904}
-                  height={644}
+                  width={423}
+                  height={480}
                   unoptimized
                   className="h-14 w-auto"
                 />

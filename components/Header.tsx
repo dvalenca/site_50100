@@ -14,10 +14,10 @@ export default function Header() {
           className="inline-flex items-center transition-transform hover:-translate-y-0.5"
         >
           <Image
-            src="/brand/logo-principal.svg"
+            src="/brand/bike.svg"
             alt=""
-            width={904}
-            height={644}
+            width={423}
+            height={480}
             unoptimized
             className="h-12 w-auto sm:h-14"
           />

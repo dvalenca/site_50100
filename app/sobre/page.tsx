@@ -116,7 +116,7 @@ export default function SobrePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionTitle
             kicker="Posicionamento"
-            title="Especialização não é neutralidade."
+            title="Comprometido com o ecosocialismo."
             description={politicalCommitments.intro}
             textColor="text-white"
             kickerColor="text-brand-yellow"

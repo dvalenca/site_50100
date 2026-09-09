@@ -9,12 +9,12 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <Image
-            src="/brand/logo-principal-claro.svg"
-            alt="Logo da campanha: A rua é do povo, com bicicleta"
-            width={904}
-            height={644}
+            src="/brand/logo-completa.svg"
+            alt="Logo da campanha: A rua é do povo, com o nome Daniel Valença, o número 50100 e a bicicleta"
+            width={595}
+            height={472}
             unoptimized
-            className="h-20 w-auto"
+            className="h-24 w-auto"
           />
           <p className="mt-4 font-display text-xl uppercase leading-tight text-brand-yellow">
             {siteConfig.candidate} {siteConfig.number}

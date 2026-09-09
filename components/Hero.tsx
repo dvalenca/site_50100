@@ -3,7 +3,6 @@ import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { axes, axisColors } from "@/content/axes";
 import { proposals } from "@/content/proposals";
-import BigNumber from "./BigNumber";
 import Button from "./Button";
 import PhotoPlaceholder from "./PhotoPlaceholder";
 
@@ -16,33 +15,21 @@ export default function Hero() {
             {siteConfig.office} • {siteConfig.party}
           </p>
           <h1 id="hero-heading" className="mt-5">
-            <span className="sr-only">Daniel Valença</span>
+            <span className="sr-only">Daniel Valença 50.100</span>
             <Image
-              src="/brand/nome-sombra.svg"
+              src="/brand/logo-completa.svg"
               alt=""
               aria-hidden="true"
-              width={984}
-              height={427}
+              width={595}
+              height={472}
               unoptimized
               priority
-              className="mt-2 w-full max-w-lg"
+              className="mt-2 w-full max-w-sm"
             />
           </h1>
-          <BigNumber className="mt-3 text-6xl text-brand-yellow sm:text-7xl md:text-8xl" />
-          <div className="mt-6 max-w-lg">
-            <Image
-              src="/brand/faixa-a-rua-e-do-povo.svg"
-              alt="A rua é do povo"
-              width={896}
-              height={181}
-              unoptimized
-              priority
-              className="w-full"
-            />
-            <p className="mt-3 font-display text-xl uppercase leading-tight text-brand-yellow sm:text-2xl">
-              E a política também precisa ser.
-            </p>
-          </div>
+          <p className="mt-4 font-display text-xl uppercase leading-tight text-brand-yellow sm:text-2xl">
+            E a política também precisa ser.
+          </p>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90">
             Mobilidade, direito à cidade, clima, trabalho e democracia para colocar
             a vida no centro das prioridades de Pernambuco.

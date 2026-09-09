@@ -23,7 +23,7 @@ const threeIdeas = [
   },
   {
     title: "Mudar a energia é mudar a mobilidade",
-    text: "Não basta trocar o motor. Precisamos reduzir a dependência do automóvel e fortalecer caminhada, bicicleta, ônibus e trilhos.",
+    text: "Precisamos reduzir a dependência do automóvel e fortalecer caminhada, bicicleta, ônibus e trilhos.",
     chip: "bg-brand-mint text-ink",
   },
 ];
