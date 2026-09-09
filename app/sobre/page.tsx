@@ -3,17 +3,14 @@ import SectionTitle from "@/components/SectionTitle";
 import StreetBanner from "@/components/StreetBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import PhotoStrip from "@/components/PhotoStrip";
-import Button from "@/components/Button";
 import CTADonate from "@/components/CTADonate";
 import {
-  awards,
   bioMedium,
   education,
   facts,
   politicalCommitments,
   timeline,
 } from "@/content/bio";
-import { institutionalWork } from "@/content/track-record";
 
 export const metadata: Metadata = {
   title: "Sobre Daniel",
@@ -100,56 +97,19 @@ export default function SobrePage() {
         />
       </section>
 
-      <section aria-labelledby="institucional-heading" className="texture-paper border-y-[6px] border-ink bg-white py-14">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <SectionTitle kicker="Atuação" title="Atuação política e institucional" />
-          <ul className="mt-10 grid gap-6 md:grid-cols-2">
-            {institutionalWork.map((work) => (
-              <li key={work.title}>
-                <article className="h-full border-[4px] border-ink bg-brand-mint p-6 shadow-[5px_5px_0_0_#16121f]">
-                  <p className="font-body text-xs font-extrabold uppercase tracking-widest text-brand-purple">
-                    {work.period}
-                  </p>
-                  <h3 className="mt-1 font-heading text-2xl font-extrabold text-ink">{work.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/85">{work.description}</p>
-                </article>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="premios-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <SectionTitle kicker="Reconhecimento" title="Prêmios" />
-            <ul className="mt-8 space-y-3">
-              {awards.map((award) => (
-                <li
-                  key={award}
-                  className="flex items-start gap-3 border-[3px] border-ink bg-brand-yellow p-4 text-sm font-bold text-ink"
-                >
-                  <span aria-hidden="true" className="mt-0.5 text-lg">★</span>
-                  {award}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <SectionTitle kicker="Base" title="Formação" />
-            <ul className="mt-8 space-y-3">
-              {education.map((item) => (
-                <li
-                  key={item.title}
-                  className="border-[3px] border-ink bg-white p-4 text-sm font-bold text-ink shadow-[4px_4px_0_0_#16121f]"
-                >
-                  <p className="text-brand-purple">{item.period}</p>
-                  <p className="mt-1">{item.title}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <section aria-labelledby="formacao-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <SectionTitle kicker="Base" title="Formação" />
+        <ul className="mt-8 grid max-w-2xl gap-3">
+          {education.map((item) => (
+            <li
+              key={item.title}
+              className="border-[3px] border-ink bg-white p-4 text-sm font-bold text-ink shadow-[4px_4px_0_0_#16121f]"
+            >
+              <p className="text-brand-purple">{item.period}</p>
+              <p className="mt-1">{item.title}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section aria-labelledby="posicionamento-heading" className="border-y-[6px] border-ink bg-brand-purple py-14">
@@ -171,17 +131,6 @@ export default function SobrePage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6">
-        <p className="font-heading text-3xl font-extrabold text-ink sm:text-4xl">
-          O programa é o próximo passo.
-        </p>
-        <div className="mt-6">
-          <Button href="/propostas" size="lg">
-            Ver as 18 propostas
-          </Button>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import PhotoStrip from "@/components/PhotoStrip";
 import Button from "@/components/Button";
 import CTADonate from "@/components/CTADonate";
 import { awards, publications } from "@/content/bio";
-import { trackRecord } from "@/content/track-record";
+import { trackRecord, institutionalWork } from "@/content/track-record";
 
 export const metadata: Metadata = {
   title: "Trajetória",
@@ -54,8 +54,27 @@ export default function TrajetoriaPage() {
         </ul>
       </section>
 
-      <section aria-labelledby="premios-heading" className="texture-paper border-y-[6px] border-ink bg-white py-14">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-2">
+      <section aria-labelledby="institucional-heading" className="texture-paper border-y-[6px] border-ink bg-white py-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionTitle kicker="Atuação" title="Atuação política e institucional" />
+          <ul className="mt-10 grid gap-6 md:grid-cols-2">
+            {institutionalWork.map((work) => (
+              <li key={work.title}>
+                <article className="h-full border-[4px] border-ink bg-brand-mint p-6 shadow-[5px_5px_0_0_#16121f]">
+                  <p className="font-body text-xs font-extrabold uppercase tracking-widest text-brand-purple">
+                    {work.period}
+                  </p>
+                  <h3 className="mt-1 font-heading text-2xl font-extrabold text-ink">{work.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/85">{work.description}</p>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="premios-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div className="grid gap-10 md:grid-cols-2">
           <div>
             <SectionTitle kicker="Reconhecimento" title="Prêmios" />
             <ul className="mt-8 space-y-3">
@@ -89,15 +108,13 @@ export default function TrajetoriaPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6">
-        <p className="font-heading text-3xl font-extrabold text-ink sm:text-4xl">
-          Trajetória é bom. Programa é melhor.
+      <section className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6">
+        <p className="font-heading text-xl font-extrabold text-ink">
+          Quer ver o que Daniel pretende fazer com essa experiência?
         </p>
-        <div className="mt-6">
-          <Button href="/propostas" size="lg">
-            Ver as 18 propostas
-          </Button>
-        </div>
+        <Button href="/propostas" className="mt-4">
+          Ver as 18 propostas
+        </Button>
       </section>
 
       <CTADonate />

@@ -60,7 +60,10 @@ export default async function ProposalPage({
               </li>
               <li aria-hidden="true">→</li>
               <li>
-                <Link href={`/propostas#${axis.slug}`} className="underline decoration-2 underline-offset-4">
+                <Link
+                  href={`/propostas?eixo=${axis.id}`}
+                  className="underline decoration-2 underline-offset-4"
+                >
                   Eixo {axis.id}
                 </Link>
               </li>

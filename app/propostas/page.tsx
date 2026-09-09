@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
-import ProposalCard from "@/components/ProposalCard";
 import ProposalsBrowser from "@/components/ProposalsBrowser";
 import { MandateToolsExplained } from "@/components/MandateTools";
-import { axes, axisColors } from "@/content/axes";
+import PriorityShift from "@/components/PriorityShift";
+import { axes } from "@/content/axes";
 import { proposals } from "@/content/proposals";
 
 export const metadata: Metadata = {
@@ -19,7 +19,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PropostasPage() {
+export default async function PropostasPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ eixo?: string }>;
+}) {
+  const { eixo } = await searchParams;
+  const parsedAxis = Number.parseInt(eixo ?? "0", 10);
+  const initialAxis =
+    parsedAxis >= 1 && parsedAxis <= 5 ? (parsedAxis as 1 | 2 | 3 | 4 | 5) : 0;
+
   return (
     <>
       <section className="texture-paper bg-brand-yellow">
@@ -33,7 +42,7 @@ export default function PropostasPage() {
             {axes.map((axis) => (
               <li key={axis.id}>
                 <Link
-                  href={`#${axis.slug}`}
+                  href={`?eixo=${axis.id}`}
                   className="font-body text-sm font-bold text-ink underline decoration-[3px] decoration-brand-purple underline-offset-4 hover:text-brand-purple"
                 >
                   Eixo {axis.id}: {axis.title}
@@ -42,6 +51,13 @@ export default function PropostasPage() {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section aria-labelledby="mandato-como-heading" className="mx-auto max-w-6xl px-4 pt-14 sm:px-6">
+        <h2 id="mandato-como-heading" className="sr-only">
+          Como um deputado transforma proposta em ação
+        </h2>
+        <MandateToolsExplained />
       </section>
 
       <section aria-labelledby="todas-heading" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -53,50 +69,11 @@ export default function PropostasPage() {
           própria, pronta para compartilhar.
         </p>
         <div className="mt-8">
-          <ProposalsBrowser proposals={proposals} />
+          <ProposalsBrowser proposals={proposals} initialAxis={initialAxis} />
         </div>
       </section>
 
-      {axes.map((axis) => {
-        const colors = axisColors[axis.id];
-        const axisProposals = proposals.filter((p) => p.axis === axis.id);
-        return (
-          <section
-            key={axis.id}
-            id={axis.slug}
-            aria-labelledby={`${axis.slug}-heading`}
-            className={`texture-paper scroll-mt-24 border-t-[6px] border-ink ${colors.band} ${colors.bandText}`}
-          >
-            <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-              <p
-                className={`inline-block border-2 border-ink px-2 py-0.5 font-body text-xs font-extrabold uppercase tracking-widest ${colors.chip}`}
-              >
-                Eixo {axis.id}
-              </p>
-              <h2
-                id={`${axis.slug}-heading`}
-                className="mt-4 max-w-3xl font-display text-4xl uppercase leading-[1.05] sm:text-5xl"
-              >
-                {axis.title}
-              </h2>
-              <p className="mt-4 max-w-2xl text-lg leading-relaxed opacity-90">
-                {axis.message}
-              </p>
-              <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {axisProposals.map((proposal) => (
-                  <li key={proposal.slug}>
-                    <ProposalCard proposal={proposal} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        );
-      })}
-
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <MandateToolsExplained />
-      </section>
+      <PriorityShift />
     </>
   );
 }

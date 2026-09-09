@@ -35,6 +35,7 @@ Todo o conteúdo editável fica em `content/`:
 | `content/axes.ts` | Os cinco eixos do programa e as ferramentas do mandato |
 | `content/proposals.ts` | As 18 propostas (modelo de dados em `Proposal`) |
 | `content/track-record.ts` | Projetos ("Daniel já fez") e atuação institucional |
+| `content/donate.ts` | Configuração de doação: valores sugeridos, impactos, meta e prova social |
 
 ## Como editar propostas
 
@@ -70,6 +71,16 @@ O logo oficial (`public/brand/`) deve ser usado como imagem quando for fornecido
 ## Como configurar links
 
 Copie `.env.example` para `.env.local` (desenvolvimento) e configure as variáveis na Vercel (produção):
+
+### Doação (valores, meta e prova social)
+
+Edite `content/donate.ts`:
+
+- `suggestedAmounts`: valores âncora (R$ 25/50/100) e o texto de impacto de cada um. **Não invente equivalências** — preencha o `impact` só quando houver custo real calculado pela campanha.
+- `goal`: meta de arrecadação (`{ raised, target, deadline }`). O termômetro aparece só quando `target > 0`.
+- `supporters`: número de pessoas que já contribuíram. A frase de prova social aparece só quando preenchido.
+
+O botão de doação usa `NEXT_PUBLIC_DONATION_URL`; sem URL configurada, os CTAs apontam para a página `/doe` com aviso.
 
 | Variável | Efeito quando vazia |
 | --- | --- |

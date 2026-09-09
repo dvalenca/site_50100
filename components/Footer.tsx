@@ -67,6 +67,32 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <div className="border-t border-white/15 py-4 text-center">
+        <a
+          href="#conteudo"
+          className="inline-flex items-center gap-2 text-sm font-bold text-white/80 underline decoration-brand-yellow decoration-2 underline-offset-4 hover:text-brand-yellow"
+        >
+          <svg
+            width="26"
+            height="16"
+            viewBox="0 0 26 16"
+            fill="none"
+            aria-hidden="true"
+            className="text-brand-yellow"
+          >
+            <circle cx="5" cy="11" r="3.5" stroke="currentColor" strokeWidth="2" />
+            <circle cx="21" cy="11" r="3.5" stroke="currentColor" strokeWidth="2" />
+            <path
+              d="M5 11l3-6h6l7 6M8 5H6M14 5l-3 6H5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Voltar ao topo
+        </a>
+      </div>
       <div className="border-t border-white/15 py-4 text-center text-xs text-white/60">
         <p>
           {siteConfig.candidate} — {siteConfig.office} — {siteConfig.party} — {siteConfig.slogan}

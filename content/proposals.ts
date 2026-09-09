@@ -66,7 +66,7 @@ export const proposals: Proposal[] = [
     proposal:
       "Exigir que toda obra em rodovia estadual — implantação, duplicação, restauração ou requalificação — inclua infraestrutura segura para quem caminha, pedala, espera e atravessa.",
     actions: [
-      "Ciclovia segregada onde existe demanda",
+      "Ciclovia separada do carro onde existe demanda",
       "Calçada e acessibilidade nos trechos urbanizados",
       "Velocidade adequada a cada trecho",
       "Fiscalização moderna",
@@ -118,7 +118,7 @@ export const proposals: Proposal[] = [
       "Integração física e tarifária",
       "Bicicletário e acesso seguro às estações",
       "Ferrovias intermunicipais de passageiros",
-      "Desenvolvimento urbano orientado ao transporte",
+      "Crescimento da cidade junto de metrô, trem e corredor de ônibus",
     ],
     tools: ["orçamento", "fiscalizar", "articular", "mobilizar"],
     goal:
@@ -179,7 +179,7 @@ export const proposals: Proposal[] = [
     proposal:
       "Recriar e ampliar o Pedala PE como política permanente de mobilidade por bicicleta em Pernambuco.",
     actions: [
-      "Atualizar e fortalecer o Plano Diretor Cicloviário da RMR",
+      "Atualizar o Plano Diretor Cicloviário da RMR — o plano das ciclovias da região metropolitana do Recife",
       "Rede ciclável com conexões entre municípios",
       "Bicicletário nas repartições públicas",
       "Bicicleta pública e comunitária",
@@ -202,7 +202,7 @@ export const proposals: Proposal[] = [
     proposal:
       "Testar um programa estadual de incentivo para quem se desloca de bicicleta, começando por experiências controladas e avaliação de resultado antes de expandir.",
     actions: [
-      "Créditos de mobilidade ativa",
+      "Crédito de deslocamento para quem pedala",
       "Benefícios públicos",
       "Estudo de incentivos tributários juridicamente possíveis",
       "Bônus em programas com trabalhadores",
@@ -222,7 +222,7 @@ export const proposals: Proposal[] = [
     problem:
       "Calçada esburacada, travessia perigosa, sol na cabeça e iluminação ruim: quem mais sofre é quem tem menos opção — pessoa idosa, com deficiência, criança, quem usa ônibus. Caminhar, que é o começo e o fim de toda viagem, é a parte mais esquecida da mobilidade.",
     proposal:
-      "Criar uma agenda estadual de caminhabilidade e acessibilidade universal nas vias de responsabilidade do estado.",
+      "Criar uma agenda estadual para as cidades ficarem boas de caminhar: calçada, travessia, sombra e acessibilidade — o que os técnicos chamam de caminhabilidade.",
     actions: [
       "Calçadas nos corredores estaduais",
       "Travessias seguras",
@@ -248,7 +248,7 @@ export const proposals: Proposal[] = [
     actions: [
       "Pequenos centros de distribuição espalhados pela cidade (microhubs)",
       "Cargobike e bicicleta elétrica para entrega",
-      "Critério de baixo carbono nas compras do Estado",
+      "Entrega limpa como critério nas compras do Estado",
       "Ponto de apoio com água, banheiro, descanso e tomada",
       "Proteção social para quem entrega de bicicleta",
       "Menos caminhão e van pesados em áreas cheias de gente",
@@ -272,7 +272,7 @@ export const proposals: Proposal[] = [
       "Ônibus elétrico com infraestrutura para operar",
       "Energia renovável para a mobilidade",
       "Conversão responsável das frotas públicas",
-      "Bicicleta e caminhada como parte da descarbonização",
+      "Bicicleta e caminhada como parte da redução de emissões",
       "Transição justa, sem subsídio que beneficie só quem tem carro",
     ],
     tools: ["orçamento", "fiscalizar", "legislar", "articular"],
@@ -315,7 +315,7 @@ export const proposals: Proposal[] = [
       "Moradia perto de transporte de alta capacidade",
       "Função social para terrenos públicos bem localizados",
       "Fiscalização de remoções e desapropriações",
-      "Desenvolvimento orientado ao transporte, com proteção contra expulsão",
+      "Moradia e serviço perto do transporte, com proteção contra expulsão",
       "Custo e tempo de deslocamento como critério da política habitacional",
     ],
     tools: ["orçamento", "fiscalizar", "articular", "planejamento"],
@@ -335,9 +335,9 @@ export const proposals: Proposal[] = [
     actions: [
       "A maior parte dos investimentos para transporte coletivo, caminhada, bicicleta, acessibilidade e segurança",
       "Redistribuição de espaço nos grandes corredores",
-      "Disputa anual de PPA, LDO e LOA",
+      "Pressão anual nas três peças do orçamento do Estado (PPA, LDO e LOA)",
       "Avaliação de obra por gente beneficiada, segurança, clima e acesso",
-      "Metodologia pública e atualizável",
+      "Regra de conta pública e atualizável",
     ],
     tools: ["orçamento", "fiscalizar", "legislar", "mobilizar"],
     goal:
@@ -356,7 +356,7 @@ export const proposals: Proposal[] = [
     actions: [
       "Painel anual do orçamento de mobilidade",
       "Gasto por modo de transporte",
-      "Visibilidade de subsídio e renúncia fiscal",
+      "Todo subsídio e desconto de imposto aparecendo na mesa",
       "Comparação entre obra anunciada e obra paga",
       "Recorte territorial do investimento",
       "Prestação de contas em linguagem simples",
@@ -378,10 +378,10 @@ export const proposals: Proposal[] = [
     actions: [
       "Integração entre saúde, segurança, DETRAN, transporte e infraestrutura",
       "Dado aberto de transporte",
-      "Metodologia clara para os dados de sinistro",
+      "Regra clara para registrar e contar os acidentes",
       "Mapa de risco",
       "Pesquisa pública",
-      "Ciência cidadã",
+      "Pesquisa feita junto com a população",
     ],
     tools: ["legislar", "fiscalizar", "dados", "articular"],
     goal:
@@ -402,7 +402,7 @@ export const proposals: Proposal[] = [
       "Oficina e formação",
       "Apoio técnico para formular proposta",
       "Audiência com acompanhamento de compromisso",
-      "Pesquisa e auditoria cidadã",
+      "Pesquisa e auditoria feitas pela população",
       "Interiorização do mandato",
       "Respeito à autonomia dos movimentos",
     ],

@@ -9,9 +9,23 @@ const filterInactive = "border-[3px] border-ink bg-white text-ink hover:bg-brand
 const filterActiveBase =
   "border-[3px] border-ink shadow-[4px_4px_0_0_#16121f] font-heading font-extrabold";
 
-export default function ProposalsBrowser({ proposals }: { proposals: Proposal[] }) {
-  const [axisFilter, setAxisFilter] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
+export default function ProposalsBrowser({
+  proposals,
+  initialAxis = 0,
+}: {
+  proposals: Proposal[];
+  initialAxis?: 0 | 1 | 2 | 3 | 4 | 5;
+}) {
+  const [axisFilter, setAxisFilter] = useState<0 | 1 | 2 | 3 | 4 | 5>(initialAxis);
   const [query, setQuery] = useState("");
+
+  // Quando a página é reaberta com outro filtro na URL
+  // (ex.: /propostas?eixo=2), ajusta o estado durante o render.
+  const [prevInitialAxis, setPrevInitialAxis] = useState(initialAxis);
+  if (initialAxis !== prevInitialAxis) {
+    setPrevInitialAxis(initialAxis);
+    setAxisFilter(initialAxis);
+  }
 
   const filtered = useMemo(() => {
     const normalizedQuery = query

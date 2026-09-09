@@ -35,8 +35,8 @@ export default function Hero() {
             <Button href="/propostas" size="lg">
               Conheça as propostas
             </Button>
-            <Button href="/doe" variant="secondary" size="lg" onDark>
-              Doe para a campanha
+            <Button href="/participe" variant="secondary" size="lg" onDark>
+              Faça parte
             </Button>
           </div>
 
@@ -46,7 +46,7 @@ export default function Hero() {
               return (
                 <li key={axis.id}>
                   <Link
-                    href={`/propostas#${axis.slug}`}
+                    href={`/propostas?eixo=${axis.id}`}
                     className={`inline-block border-2 border-ink px-3 py-1 font-body text-xs font-bold uppercase tracking-wide ${colors.chip}`}
                   >
                     Eixo {axis.id}

@@ -12,8 +12,8 @@ export const axes: Axis[] = [
     slug: "eixo-1",
     title: "Ninguém deveria morrer para se deslocar",
     message:
-      "Segurança viária é saúde pública. A responsabilidade do Estado é construir um sistema em que erros humanos não sejam punidos com morte.",
-    summary: "Segurança viária com Sistema Seguro para proteger quem anda, pedala, motocicleta e usa ônibus.",
+      "Trânsito é questão de saúde pública. O Estado precisa desenhar ruas, velocidades e fiscalização para que o erro de qualquer pessoa não termine em morte.",
+    summary: "Ruas desenhadas para que o erro de ninguém termine em morte.",
   },
   {
     id: 2,
@@ -21,31 +21,31 @@ export const axes: Axis[] = [
     title: "Transporte Público de Verdade",
     message:
       "Tarifa importa, mas gratuidade sem qualidade não resolve. Transporte coletivo precisa ganhar frequência, velocidade, confiabilidade, conforto e integração.",
-    summary: "Frequência, confiabilidade, acessibilidade, integração — e Tarifa Zero como horizonte.",
+    summary: "Ônibus, metrô e trem que passam, chegam no horário e levam as pessoas com dignidade.",
   },
   {
     id: 3,
     slug: "eixo-3",
     title: "Pernambuco para caminhar, pedalar e transportar",
     message:
-      "Bicicleta é transporte, trabalho, logística, turismo, saúde e transição energética. Caminhar é a base de todas as viagens.",
-    summary: "Caminhabilidade, rede cicloviária e logística de última milha limpa e humana.",
+      "Bicicleta é transporte, trabalho, turismo e saúde. E caminhar é o começo e o fim de toda viagem.",
+    summary: "Calçada boa, ciclovia conectada e entrega limpa nas cidades.",
   },
   {
     id: 4,
     slug: "eixo-4",
     title: "Mobilidade é política climática e urbana",
     message:
-      "Calor extremo, enchentes, sombra, moradia e deslocamento fazem parte da mesma agenda. Transição energética precisa ser também transição modal e socialmente justa.",
-    summary: "Adaptação climática nas ruas, transição modal e moradia perto do transporte.",
+      "Calor extremo, enchentes, sombra, moradia e deslocamento fazem parte da mesma agenda. Mudar a matriz de energia precisa mudar também o jeito de se deslocar — com justiça social.",
+    summary: "Sombra, água, moradia perto do transporte e menos dependência de carro.",
   },
   {
     id: 5,
     slug: "eixo-5",
     title: "Democracia, participação e dinheiro público",
     message:
-      "O verdadeiro discurso do governo aparece no orçamento. Política pública precisa de dados abertos, transparência e controle social.",
-    summary: "Orçamento aberto, dados públicos e mandato construído com a sociedade.",
+      "O verdadeiro discurso do governo aparece no orçamento. Política pública precisa de dado aberto, transparência e controle social.",
+    summary: "Dinheiro público no centro do debate: orçamento aberto, dado público e participação.",
   },
 ];
 
