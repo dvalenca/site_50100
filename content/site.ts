@@ -21,6 +21,9 @@ export const siteConfig = {
   groupUrl: // grupo de voluntariado
     process.env.NEXT_PUBLIC_GROUP_URL ||
     "https://chat.whatsapp.com/FdVmkm9KwviH1dtKWCNJ42",
+  agendaUrl: // agenda de campanha (Google Calendar)
+    process.env.NEXT_PUBLIC_AGENDA_URL ||
+    "https://calendar.google.com/calendar/u/0?cid=YTcwNWJmYWM5NjAxNjRmMTE2MjkyNzJkNzVjZDllZDUwNTlhZjcyNjUzYTVjN2Y0YzY5MTNmNzVmYmQxMThhZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
   materialsUrl: process.env.NEXT_PUBLIC_MATERIALS_URL || "",
   campaignEmail: process.env.NEXT_PUBLIC_CAMPAIGN_EMAIL || "",
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT || "",

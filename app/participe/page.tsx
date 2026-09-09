@@ -28,6 +28,11 @@ const blocks = [
     link: { label: "Grupo de voluntariado", href: siteConfig.groupUrl },
   },
   {
+    title: "Agenda da campanha",
+    text: "As próximas atividades ficam na agenda pública: encontre a campanha na sua rua, bairro ou cidade.",
+    link: { label: "Abrir a agenda", href: siteConfig.agendaUrl },
+  },
+  {
     title: "Mobilização digital",
     text: "Espalhar as propostas nas redes, com informação de verdade e sem fake news.",
     link: { label: "Comunidade de avisos", href: siteConfig.whatsappUrl },
