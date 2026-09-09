@@ -134,10 +134,10 @@ export default function HomePage() {
         <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr]">
           <div className="border-[5px] border-ink bg-brand-mint p-2 shadow-[8px_8px_0_0_#5d0caa]">
             <Image
-              src="/photos/daniel-retrato.webp"
-              alt="Retrato de Daniel Valença"
-              width={1200}
-              height={1600}
+              src="/photos/daniel-home.webp"
+              alt="Foto de Daniel Valença"
+              width={574}
+              height={936}
               className="aspect-[3/4] w-full object-cover"
               sizes="(min-width: 768px) 30vw, 90vw"
             />

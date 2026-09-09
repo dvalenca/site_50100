@@ -61,12 +61,12 @@ export default function TrajetoriaPage() {
           <div className="md:sticky md:top-24">
             <div className="border-[5px] border-ink bg-brand-yellow p-2 shadow-[8px_8px_0_0_#ee3c00]">
               <Image
-                src="/photos/daniel-retrato.webp"
-                alt="Retrato de Daniel Valença"
-                width={1200}
-                height={1600}
-                className="aspect-[3/4] w-full object-cover"
-                sizes="(min-width: 768px) 30vw, 90vw"
+                src="/photos/daniel-premio.webp"
+                alt="Daniel Valença no Prêmio Bicicleta Brasil"
+                width={1600}
+                height={1066}
+                className="aspect-[4/3] w-full object-cover"
+                sizes="(min-width: 768px) 35vw, 90vw"
               />
             </div>
           </div>
@@ -105,8 +105,8 @@ export default function TrajetoriaPage() {
             {
               label: "Daniel pedalando na cidade",
               src: "/photos/daniel-pedalando-cidade.webp",
-              width: 460,
-              height: 620,
+              width: 1200,
+              height: 800,
             },
             {
               label: "Daniel no transporte coletivo",
@@ -137,6 +137,24 @@ export default function TrajetoriaPage() {
               src: "/photos/daniel-pesquisas.webp",
               width: 1200,
               height: 900,
+            },
+            {
+              label: "Daniel em atividade da campanha",
+              src: "/photos/daniel-atividade-1.webp",
+              width: 960,
+              height: 720,
+            },
+            {
+              label: "Daniel em atividade de mobilidade urbana",
+              src: "/photos/daniel-atividade-2.webp",
+              width: 1200,
+              height: 798,
+            },
+            {
+              label: "Daniel em atividade com ciclistas",
+              src: "/photos/daniel-atividade-3.webp",
+              width: 1024,
+              height: 768,
             },
           ]}
         />
