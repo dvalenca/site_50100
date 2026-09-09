@@ -64,11 +64,11 @@ export default function Hero() {
           <div className="border-[6px] border-ink bg-ink p-2 shadow-[10px_10px_0_0_#ffc900]">
             <Image
               src="/photos/daniel-hero.webp"
-              alt="Daniel em atividade na rua com a bandeira da campanha"
-              width={1600}
-              height={1066}
+              alt="Daniel Valença"
+              width={1200}
+              height={1600}
               priority
-              className="h-72 w-full object-cover md:h-96"
+              className="aspect-[3/4] w-full object-cover"
               sizes="(min-width: 768px) 40vw, 90vw"
             />
           </div>
