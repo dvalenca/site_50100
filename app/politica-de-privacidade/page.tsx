@@ -11,8 +11,6 @@ export const metadata: Metadata = {
 
 const placeholders: Record<string, string> = {
   "{{EMAIL_CAMPANHA}}": siteConfig.campaignEmail || "{{EMAIL_CAMPANHA}}",
-  "{{CNPJ_CAMPANHA}}": "{{CNPJ_CAMPANHA}}",
-  "{{DADOS_LEGAIS_OBRIGATORIOS}}": "{{DADOS_LEGAIS_OBRIGATORIOS}}",
 };
 
 export default function PoliticaDePrivacidadePage() {
@@ -86,9 +84,9 @@ export default function PoliticaDePrivacidadePage() {
 
         <div className="border-l-4 border-brand-orange pl-4 text-sm">
           <p>
-            Informações legais obrigatórias (como CNPJ do comitê e dados de
-            prestação de contas) serão publicadas quando fornecidas e
-            validadas: {placeholders["{{DADOS_LEGAIS_OBRIGATORIOS}}"]}.
+            Campanha Daniel Valença 50.100 — CNPJ {siteConfig.cnpj}. Outras
+            informações legais obrigatórias (como dados de prestação de contas)
+            serão publicadas quando fornecidas e validadas pela campanha.
           </p>
         </div>
       </div>

@@ -74,11 +74,26 @@ export default function Footer() {
 
         <div className="text-sm leading-relaxed text-white/70">
           <p className="font-body text-sm font-extrabold uppercase tracking-[0.2em] text-brand-yellow">
-            Transparência
+            Propaganda eleitoral
           </p>
           <p className="mt-4">
-            Dados eleitorais legalmente obrigatórios serão publicados aqui quando
-            fornecidos e validados pela campanha.
+            ELEIÇÃO 2026 — {siteConfig.candidate.toUpperCase()} | {siteConfig.office.toUpperCase()}
+            <br />
+            {siteConfig.candidate} — {siteConfig.office} | {siteConfig.number.replace(".", "")}
+            <br />
+            {siteConfig.party}
+            <br />
+            CNPJ da campanha: {siteConfig.cnpj}
+            <br />
+            Contato:{" "}
+            {siteConfig.campaignEmail ? (
+              <a
+                className="underline decoration-brand-yellow decoration-2 underline-offset-4 hover:text-brand-yellow"
+                href={`mailto:${siteConfig.campaignEmail}`}
+              >
+                {siteConfig.campaignEmail}
+              </a>
+            ) : null}
           </p>
         </div>
       </div>
@@ -93,8 +108,9 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/15 py-4 text-center text-xs text-white/60">
         <p>
-          {siteConfig.candidate} — {siteConfig.office} — {siteConfig.party} — {siteConfig.slogan}
+          © 2026 {siteConfig.candidate} — {siteConfig.office} — {siteConfig.party} — {siteConfig.slogan}
         </p>
+        <p className="mt-1">Site desenvolvido pelo próprio candidato.</p>
       </div>
     </footer>
   );

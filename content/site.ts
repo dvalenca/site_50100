@@ -25,7 +25,8 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_AGENDA_URL ||
     "https://calendar.google.com/calendar/u/0?cid=YTcwNWJmYWM5NjAxNjRmMTE2MjkyNzJkNzVjZDllZDUwNTlhZjcyNjUzYTVjN2Y0YzY5MTNmNzVmYmQxMThhZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
   materialsUrl: process.env.NEXT_PUBLIC_MATERIALS_URL || "",
-  campaignEmail: process.env.NEXT_PUBLIC_CAMPAIGN_EMAIL || "",
+  campaignEmail: process.env.NEXT_PUBLIC_CAMPAIGN_EMAIL || "contato@danielvalenca.com.br",
+  cnpj: "68.571.393/0001-27",
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT || "",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://danielvalenca.com.br",
 };

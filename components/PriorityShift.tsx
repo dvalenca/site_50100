@@ -20,7 +20,7 @@ export default function PriorityShift() {
           id="priority-shift-heading"
           className="max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] text-ink sm:text-5xl"
         >
-          Não é um catálogo de obras. É uma mudança de prioridade.
+          A prioridade legal precisa ser a prioridade na política.
         </h2>
         <ul className="mt-10 grid gap-4 md:grid-cols-2">
           {shifts.map((shift) => (

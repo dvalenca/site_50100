@@ -19,7 +19,7 @@ import { trackRecord, institutionalWork } from "@/content/track-record";
 export const metadata: Metadata = {
   title: "Trajetória",
   description:
-    "Quem é Daniel Valença e o que ele já fez: engenheiro eletrônico, mestre em Energia pela UFPE, cofundador da Ameciclo — uma década de dados, pesquisa e mobilização por mobilidade e direito à cidade.",
+    "Quem é Daniel Valença e o que ele já fez: engenheiro eletrônico, mestre em Energia pela UFPE, cofundador da Ameciclo — 15 anos de dados, pesquisa e mobilização por mobilidade e direito à cidade.",
   alternates: { canonical: "/trajetoria" },
   openGraph: {
     title: "Trajetória | Daniel Valença 50.100",
@@ -150,7 +150,7 @@ export default function TrajetoriaPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionTitle
             kicker="Trajetória comprovada"
-            title="Não comecei a discutir mobilidade agora."
+            title="Estou há 15 anos estudando, debatendo e construindo na mobilidade."
             description="Há mais de uma década, Daniel transforma dados, pesquisa e mobilização em ferramentas para mudar as ruas e cobrar o poder público."
             textColor="text-white"
             kickerColor="text-brand-yellow"
