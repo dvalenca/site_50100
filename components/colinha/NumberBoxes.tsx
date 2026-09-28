@@ -12,16 +12,22 @@ export default function NumberBoxes({
   valor,
   tamanho = "md",
   emDestaque = false,
+  className = "",
 }: {
   casas: number;
   valor: string;
   tamanho?: Tamanho;
   emDestaque?: boolean;
+  className?: string;
 }) {
   const digitos = Array.from({ length: casas }, (_, i) => valor[i] ?? "");
   const temNumero = digitos.some(Boolean);
   return (
-    <div className="flex gap-1" role="img" aria-label={temNumero ? `Número ${valor}` : "Número em branco"}>
+    <div
+      className={`flex gap-1 ${className}`}
+      role="img"
+      aria-label={temNumero ? `Número ${valor}` : "Número em branco"}
+    >
       {digitos.map((digito, i) => (
         <span
           key={i}

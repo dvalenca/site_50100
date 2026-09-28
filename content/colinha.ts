@@ -152,6 +152,12 @@ export function opcaoSenado(id: string): CandidaturaSenado | undefined {
   return colinhaConfig.senado.opcoes.find((o) => o.id === id);
 }
 
+/** Resolve um número federal completo (4 dígitos) para a sugestão correspondente. */
+export function sugestaoFederal(numero: string): CandidaturaFederal | undefined {
+  if (numero.length !== colinhaConfig.federal.digitos) return undefined;
+  return colinhaConfig.federal.sugestoes.find((s) => s.numero === numero);
+}
+
 function sanitizarNumero(valor: string | null | undefined, digitos: number): string {
   if (!valor) return "";
   const apenasDigitos = valor.replace(/\D/g, "");

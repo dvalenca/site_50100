@@ -1,4 +1,4 @@
-import { colinhaConfig, opcaoSenado, type EscolhasColinha } from "@/content/colinha";
+import { colinhaConfig, opcaoSenado, sugestaoFederal, type EscolhasColinha } from "@/content/colinha";
 
 // Renderizador em canvas do santinho, para exportar PNG em alta resolução.
 // Espelha o design do ColinhaCard: cargos na ordem da urna, Daniel em destaque.
@@ -344,6 +344,7 @@ export async function renderColinhaCanvas(
   }
 
   const senado = escolhas.senado.map((id) => opcaoSenado(id) ?? null);
+  const federal = sugestaoFederal(escolhas.federal);
   const carregar = (src?: string) => (src ? carregarImagem(src) : Promise.resolve(null));
   const [fotoDaniel, fotoS1, fotoS2, fotoGov, fotoPres] = await Promise.all([
     carregar(colinhaConfig.estadual.foto),
@@ -368,8 +369,8 @@ export async function renderColinhaCanvas(
       h: 136,
       indice: 1,
       cargo: colinhaConfig.federal.rotulo,
-      nome: null,
-      partido: "",
+      nome: federal?.nome ?? null,
+      partido: federal?.partido ?? "",
       valor: escolhas.federal,
       casas: 4,
       boxW: 62,
@@ -438,8 +439,8 @@ export async function renderColinhaCanvas(
       h: 190,
       indice: 1,
       cargo: colinhaConfig.federal.rotulo,
-      nome: null,
-      partido: "",
+      nome: federal?.nome ?? null,
+      partido: federal?.partido ?? "",
       valor: escolhas.federal,
       casas: 4,
       boxW: 74,

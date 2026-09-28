@@ -34,7 +34,7 @@ export default function SugestoesFederalSheet({
                 type="button"
                 onClick={() => onConfirm(opcao.numero)}
                 aria-pressed={selecionada}
-                className={`flex w-full items-center gap-3 border-[3px] border-ink p-3 text-left shadow-[3px_3px_0_0_#16121f] active:translate-y-px ${
+                className={`flex w-full flex-wrap items-center gap-x-3 gap-y-2 border-[3px] border-ink p-3 text-left shadow-[3px_3px_0_0_#16121f] active:translate-y-px ${
                   selecionada ? "bg-brand-mint" : "bg-white"
                 }`}
               >
@@ -55,14 +55,19 @@ export default function SugestoesFederalSheet({
                   </span>
                 )}
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate font-display text-xl uppercase text-ink">
+                  <span className="block font-display text-xl uppercase leading-tight text-ink">
                     {opcao.nome}
                   </span>
                   <span className="mt-1 block text-xs font-extrabold uppercase tracking-wide text-ink/70">
                     {opcao.partido}
                   </span>
                 </span>
-                <NumberBoxes casas={4} valor={opcao.numero} tamanho="sm" />
+                <NumberBoxes
+                  casas={4}
+                  valor={opcao.numero}
+                  tamanho="sm"
+                  className="basis-full justify-end sm:ml-auto sm:basis-auto"
+                />
               </button>
             </li>
           );

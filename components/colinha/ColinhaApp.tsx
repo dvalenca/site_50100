@@ -24,7 +24,7 @@ export default function ColinhaApp({ inicial }: { inicial: EscolhasColinha }) {
   const [federal, setFederal] = useState(inicial.federal);
   const [senado, setSenado] = useState(inicial.senado);
   const [folha, setFolha] = useState<null | "sugestoes" | 0 | 1>(null);
-  const [formato, setFormato] = useState<"wide" | "story">("wide");
+  const [formato, setFormato] = useState<"wide" | "story">("story");
   const [aviso, setAviso] = useState("");
   const [ocupado, setOcupado] = useState(false);
 
@@ -134,7 +134,7 @@ export default function ColinhaApp({ inicial }: { inicial: EscolhasColinha }) {
         </header>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
-          <div>
+          <div className="-mx-4 sm:-mx-6 lg:mx-0">
             <ColinhaCard
               escolhas={escolhas}
               formato={formato}
@@ -147,7 +147,7 @@ export default function ColinhaApp({ inicial }: { inicial: EscolhasColinha }) {
                 invertivel,
               }}
             />
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ink/70">
+            <p className="mx-auto mt-4 max-w-2xl px-4 text-sm leading-relaxed text-ink/70 sm:px-6 lg:px-0">
               As suas escolhas ficam guardadas no link. Copie, mande no WhatsApp ou baixe a
               imagem — quem abrir o link vê exatamente esta colinha, sem precisar de conta.
             </p>
