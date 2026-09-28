@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { navLinks, siteConfig } from "@/content/site";
-import Button from "./Button";
+import { navLinks } from "@/content/site";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
@@ -45,35 +44,23 @@ export default function Header() {
               </li>
             ))}
             <li>
-              <Button
-                href={siteConfig.donationUrl || "/doe"}
-                external={Boolean(siteConfig.donationUrl)}
-                className="ml-2"
+              <Link
+                href="/colinha"
+                className="ml-2 inline-flex min-h-12 items-center justify-center border-[3px] border-ink bg-brand-orange px-5 py-2 font-display text-base uppercase leading-none text-white shadow-[4px_4px_0_0_#16121f] transition-transform hover:-translate-y-0.5"
               >
-                Doe agora
-              </Button>
+                Colinha
+              </Link>
             </li>
           </ul>
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
-          {siteConfig.donationUrl ? (
-            <a
-              href={siteConfig.donationUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white shadow-[3px_3px_0_0_#16121f]"
-            >
-              Doe agora
-            </a>
-          ) : (
-            <Link
-              href="/doe"
-              className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white shadow-[3px_3px_0_0_#16121f]"
-            >
-              Doe agora
-            </Link>
-          )}
+          <Link
+            href="/colinha"
+            className="border-[3px] border-ink bg-brand-orange px-3 py-2 font-display text-sm uppercase text-white shadow-[3px_3px_0_0_#16121f]"
+          >
+            Colinha
+          </Link>
           <MobileMenu open={menuOpen} onOpenChange={setMenuOpen} />
         </div>
       </div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { navLinks, siteConfig } from "@/content/site";
+import { navLinks } from "@/content/site";
 
 export default function MobileMenu({
   open,
@@ -106,24 +106,13 @@ export default function MobileMenu({
                     ))}
                   </nav>
 
-                  {siteConfig.donationUrl ? (
-                    <a
-                      href={siteConfig.donationUrl}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
-                    >
-                      Doe agora
-                    </a>
-                  ) : (
-                    <Link
-                      href="/doe"
-                      onClick={() => onOpenChange(false)}
-                      className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
-                    >
-                      Doe agora
-                    </Link>
-                  )}
+                  <Link
+                    href="/colinha"
+                    onClick={() => onOpenChange(false)}
+                    className="mt-8 flex min-h-14 items-center justify-center border-[3px] border-ink bg-brand-orange px-6 py-3 font-display text-2xl uppercase text-white shadow-[4px_4px_0_0_#16121f]"
+                  >
+                    Colinha
+                  </Link>
                 </div>
               </div>
             </div>,

@@ -63,6 +63,7 @@ export default function Footer() {
             <li><Link className="hover:text-brand-yellow hover:underline" href="/propostas">Propostas</Link></li>
             <li><Link className="hover:text-brand-yellow hover:underline" href="/trajetoria">Trajetória</Link></li>
             <li><Link className="hover:text-brand-yellow hover:underline" href="/participe">Faça parte</Link></li>
+            <li><Link className="hover:text-brand-yellow hover:underline" href="/colinha">Monte sua colinha</Link></li>
             <li><Link className="hover:text-brand-yellow hover:underline" href="/doe">Doe agora</Link></li>
             <li>
               <Link className="hover:text-brand-yellow hover:underline" href="/politica-de-privacidade">
