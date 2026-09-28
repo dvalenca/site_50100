@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { colinhaConfig, opcaoSenado, type EscolhasColinha } from "@/content/colinha";
+import { colinhaConfig, opcaoSenado, sugestaoFederal, type EscolhasColinha } from "@/content/colinha";
 import FederalInput from "./FederalInput";
 import NumberBoxes from "./NumberBoxes";
 
@@ -73,12 +73,15 @@ export default function ColinhaCard({
   const c = colinhaConfig;
   const story = formato === "story";
   const senado = escolhas.senado.map((id) => opcaoSenado(id) ?? null);
+  const federal = sugestaoFederal(escolhas.federal);
 
   return (
     <article
       aria-label="Colinha para as eleições 2026 em Pernambuco"
-      className={`mx-auto w-full border-[5px] border-ink bg-white text-ink shadow-[10px_10px_0_0_#5d0caa] ${
-        story ? "flex max-w-[340px] flex-col" : "max-w-2xl"
+      className={`w-full border-[5px] border-ink bg-white text-ink shadow-none lg:shadow-[10px_10px_0_0_#5d0caa] ${
+        story
+          ? "flex flex-col lg:mx-auto lg:max-w-[340px]"
+          : "lg:mx-auto lg:max-w-2xl"
       }`}
     >
       <div className="flex min-h-10 items-center justify-center border-b-[5px] border-ink bg-brand-purple px-3 py-2 text-center">
@@ -87,11 +90,12 @@ export default function ColinhaCard({
         </p>
       </div>
 
-      {/* 1 — Deputado(a) Federal */}
+      {/* 1 — Deputado(a) Federal (nome/partido só quando o número está na lista) */}
       <Linha
         indice={1}
         cargo={c.federal.rotulo}
-        nome={null}
+        nome={federal?.nome ?? null}
+        partido={federal?.partido}
         casas={c.federal.digitos}
         valor={escolhas.federal}
         caixas={
